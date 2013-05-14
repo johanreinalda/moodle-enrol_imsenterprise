@@ -68,6 +68,7 @@ var $log;
 // new variables needed - JKR
 var $starttime;
 var $errorCount = 0; // should really be in constructor - JKR
+var $warningCount = 0;
 
 /**
 * Read in an IMS Enterprise file.
@@ -279,6 +280,7 @@ function cron() {
 
     // show global error count - JKR
     $this->log_line('');  // for ease of reading - JKR
+    $this->log_line("Warnings found: $this->warningCount");
     $this->log_line("Errors found: $this->errorCount");
     $this->log_line("IMS Enterprise enrol cron process finished at " . userdate(time()));
     $this->log_line('----------------------------------------------------------------------');
@@ -1187,36 +1189,44 @@ function snapshot_unenrol($coursecodes,$central_member_list) {
 
 
 		$context = get_context_instance(CONTEXT_COURSE,$course->id);
-		$this->log_line("Getting role records\n");
+		//$this->log_line("Getting role records\n");
 		$roles=$DB->get_records('role');
 		
 		// Grab the enrolment group for imsenterprise so that we can ensure only IMS users are removed - APG
-		$this->log_line("Getting enrolment_group records\n");
+		//$this->log_line("Getting enrolment_group records\n");
 		$enrolment_group = $DB->get_record('enrol', array('courseid'=>$course->id, 'enrol'=>'imsenterprise'));
+		if($enrolment_group) {
 
-		foreach ($roles as $role) {
-			$this->log_line("  ROLE: $role->id ($role->name)" );
-			
-			//get list of Moodle users in this role in  course
-			
-			// This now has a pre-check for the enrolment group that is imsenterprise so we no longer have to check for it later - APG
-			if ($contextusers = get_role_users($role->id, $context, false, 'u.id,u.username,ra.roleid, ra.itemid',
-		        	'u.id', null,'', '', '', ' ra.itemid = ? ',  array($enrolment_group->id))) {
-		        		
-				$this->log_line( "    MOODLE contextusers:\n" . print_r($contextusers,true));
+			foreach ($roles as $role) {
+				//$role->name is invalid in >= 2.4, use role_get_name($role) - JKR
+				$this->log_line("  ROLE: $role->id (" . role_get_name($role) . ")" );
 				
-				//show all IMS users in this role for the current class.
-				$this->log_line( "    IMS central_userids:\n" . print_r($central_userids,true));
-				//loop through moodle users in this role and compare with IMS users
-				foreach ($contextusers as $moodle_user) {
-					$this->log_line("    MOODLE CONTEXT SINGLE USER: $moodle_user->id ($moodle_user->username, Enrol=$moodle_user->itemid, Keep=$keep_informal)");
-					if (!in_array($moodle_user->id,$central_userids[$course->id])) {
-						$this->unenrol_user($enrolment_group, $moodle_user->id);
-						$this->log_line("User $moodle_user->username removed from role $role->id from course site $course->id because no longer has this role in central database.");
-					}
-				}  /* for each moodle/context user */
-			}  /* if contextusers */
-		}  /* for each role */
+				//get list of Moodle users in this role in  course
+				
+				// This now has a pre-check for the enrolment group that is imsenterprise so we no longer have to check for it later - APG
+				// In 2.4, cannot used mixed parameters, so last where clause is collapsed into single statement, with empty parameters - JKR 20130514
+			    if ($contextusers = get_role_users($role->id, $context, false, 'u.id,u.username,ra.roleid, ra.itemid',
+			        			'u.id', null,'', '', '', 'ra.itemid = ' . $enrolment_group->id, Array())) {
+			        			 
+					//$this->log_line( "    MOODLE contextusers:\n" . print_r($contextusers,true));
+					
+					//show all IMS users in this role for the current class.
+					//$this->log_line( "    IMS central_userids:\n" . print_r($central_userids,true));
+					//loop through moodle users in this role and compare with IMS users
+					foreach ($contextusers as $moodle_user) {
+						//$this->log_line("    MOODLE CONTEXT SINGLE USER: $moodle_user->id ($moodle_user->username, Enrol=$moodle_user->itemid, Keep=$keep_informal)");
+						if (!in_array($moodle_user->id,$central_userids[$course->id])) {
+							$this->unenrol_user($enrolment_group, $moodle_user->id);
+							$this->log_line("User $moodle_user->username removed from role $role->id from course site $course->id because no longer has this role in central database.");
+						}
+					}  /* for each moodle/context user */
+				}  /* if contextusers */
+			}  /* for each role */
+		}  /* if enrolment_group exists */
+		else {
+			$this->log_line("WARNING: enrolment_group 'imsenterprise' NOT found for this course!");
+			$this->warningCount++;
+		}
 	}  /* for each course */
 	
 	$this->log_line("--- snapshot_unenrol() finished ---");

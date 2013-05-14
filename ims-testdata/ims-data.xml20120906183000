@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<enterprise>
+   <properties lang="EN">
+      <datasource>IData: Datatel Colleague to Moodle Export</datasource>
+      <datetime>2012-09-06   06:30:27PM</datetime>
+   </properties>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1464746</id>
+      </sourcedid>
+      <userid>1464746</userid>
+      <name>
+         <fn>Michael Kennard</fn>
+         <n>
+            <given>Michael</given>
+            <family>Kennard</family>
+         </n>
+      </name>
+      <email>mike.kennard@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1473766</id>
+      </sourcedid>
+      <userid>1473766</userid>
+      <name>
+         <fn>Ronald Greene</fn>
+         <n>
+            <given>Ronald</given>
+            <family>Greene</family>
+         </n>
+      </name>
+      <email>Ronald.Greene@global.thunderbird.edu</email>
+   </person>
+ 
+</enterprise>

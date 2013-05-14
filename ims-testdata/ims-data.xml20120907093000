@@ -1,0 +1,950 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<enterprise>
+   <properties lang="EN">
+      <datasource>IData: Datatel Colleague to Moodle Export</datasource>
+      <datetime>2012-09-07   09:30:43AM</datetime>
+   </properties>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1474354</id>
+      </sourcedid>
+      <userid>1474354</userid>
+      <name>
+         <fn>Matthew Henne</fn>
+         <n>
+            <given>Matthew</given>
+            <family>Henne</family>
+         </n>
+      </name>
+      <email>matt@mercurytradingco.com</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1437260</id>
+      </sourcedid>
+      <userid>1437260</userid>
+      <name>
+         <fn>Ihab Zaki</fn>
+         <n>
+            <given>Ihab</given>
+            <family>Zaki</family>
+         </n>
+      </name>
+      <email>ihab.i.zaki@exxonmobil.com</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1435147</id>
+      </sourcedid>
+      <userid>1435147</userid>
+      <name>
+         <fn>Jennifer Gayer</fn>
+         <n>
+            <given>Jennifer</given>
+            <family>Gayer</family>
+         </n>
+      </name>
+      <email>jennifer.l.gayer@exxonmobil.com</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1433617</id>
+      </sourcedid>
+      <userid>1433617</userid>
+      <name>
+         <fn>David Bruton</fn>
+         <n>
+            <given>David</given>
+            <family>Bruton</family>
+         </n>
+      </name>
+      <email>david.j.bruton@exxonmobil.com</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1439830</id>
+      </sourcedid>
+      <userid>1439830</userid>
+      <name>
+         <fn>Georgina Hew</fn>
+         <n>
+            <given>Georgina</given>
+            <family>Hew</family>
+         </n>
+      </name>
+      <email>georgina.r.hew@exxonmobil.com</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1440648</id>
+      </sourcedid>
+      <userid>1440648</userid>
+      <name>
+         <fn>Jennifer Chan</fn>
+         <n>
+            <given>Jennifer</given>
+            <family>Chan</family>
+         </n>
+      </name>
+      <email>jennifer.ml.chan@exxonmobil.com</email>
+   </person>
+ 
+   <group>
+      <sourcedid>
+         <id>16107</id>
+      </sourcedid>
+      <description>
+         <short>XC 1008 124 (2012XF)</short>
+         <long>ExxonMobil ALP I 10/15 (XC 1008 124 (2012XF))</long>
+      </description>
+      <org>
+         <orgunit>2012XF</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-10-15</begin>
+         <end>2012-10-25</end>
+         <adminperiod>2012XF</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>16108</id>
+      </sourcedid>
+      <description>
+         <short>XC 1008 125 (2012XF)</short>
+         <long>ExxonMobil ALP II 10/16 (XC 1008 125 (2012XF))</long>
+      </description>
+      <org>
+         <orgunit>2012XF</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-10-16</begin>
+         <end>2012-10-26</end>
+         <adminperiod>2012XF</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>16135</id>
+      </sourcedid>
+      <description>
+         <short>XO 1055 09 (2012XF)</short>
+         <long>CNGM 10/31 (XO 1055 09 (2012XF))</long>
+      </description>
+      <org>
+         <orgunit>2012XF</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-10-31</begin>
+         <end>2012-11-02</end>
+         <adminperiod>2012XF</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <membership>
+      <sourcedid>
+         <id>16107</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1213914</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1446261</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1422648</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450871</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1434004</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1277388</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1473546</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1439099</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1448652</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451029</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1424543</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450448</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1444534</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450853</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1473659</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1426772</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1473693</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1441499</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456082</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1447160</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1436749</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1444172</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1448011</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1428988</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460043</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1435200</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>16108</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1213914</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451310</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454438</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1439940</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1444319</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1445636</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456351</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451117</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1440362</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1322684</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1428493</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1422641</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1433679</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461910</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450976</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451305</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450742</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1449902</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1441510</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450462</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460000</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1433617</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1440648</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1435147</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1439830</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1447244</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1437260</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>16135</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1340525</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1081431</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1473446</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1473566</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1403528</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1467367</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1474025</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1474280</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1462051</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1474354</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+</enterprise>

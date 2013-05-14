@@ -1,0 +1,5050 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<enterprise>
+   <properties lang="EN">
+      <datasource>IData: Datatel Colleague to Moodle Export</datasource>
+      <datetime>2012-08-28   10:05:18PM</datetime>
+   </properties>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461652</id>
+      </sourcedid>
+      <userid>sss@aol.com</userid>
+      <name>
+         <fn>Aderonke Coker</fn>
+         <n>
+            <given>Aderonke</given>
+            <family>Coker</family>
+         </n>
+      </name>
+      <email>sss@aol.com</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1390134</id>
+      </sourcedid>
+      <userid>chelsea.nelson@global.t-bird.edu</userid>
+      <name>
+         <fn>Chelsea Nelson</fn>
+         <n>
+            <given>Chelsea</given>
+            <family>Nelson</family>
+         </n>
+      </name>
+      <email>chelsea.nelson@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461656</id>
+      </sourcedid>
+      <userid>andres.osorio@global.t-bird.edu</userid>
+      <name>
+         <fn>Andres Osorio</fn>
+         <n>
+            <given>Andres</given>
+            <family>Osorio</family>
+         </n>
+      </name>
+      <email>andres.osorio@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452041</id>
+      </sourcedid>
+      <userid>bizjack@global.t-bird.edu</userid>
+      <name>
+         <fn>Brian Bizjack</fn>
+         <n>
+            <given>Brian</given>
+            <family>Bizjack</family>
+         </n>
+      </name>
+      <email>bizjack@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1437019</id>
+      </sourcedid>
+      <userid>javiercheng@global.t-bird.edu</userid>
+      <name>
+         <fn>Javier Cheng</fn>
+         <n>
+            <given>Javier</given>
+            <family>Cheng</family>
+         </n>
+      </name>
+      <email>javiercheng@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1083637</id>
+      </sourcedid>
+      <userid>john.zerio@thunderbird.edu</userid>
+      <name>
+         <fn>John Zerio</fn>
+         <n>
+            <given>John</given>
+            <family>Zerio</family>
+         </n>
+      </name>
+      <email>john.zerio@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1464070</id>
+      </sourcedid>
+      <userid>jillian.furbish@global.t-bird.edu</userid>
+      <name>
+         <fn>Jillian Furbish</fn>
+         <n>
+            <given>Jillian</given>
+            <family>Furbish</family>
+         </n>
+      </name>
+      <email>jillian.furbish@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454458</id>
+      </sourcedid>
+      <userid>evenaliao@global.t-bird.edu</userid>
+      <name>
+         <fn>Yu Jen Liau</fn>
+         <n>
+            <given>Yu Jen</given>
+            <family>Liau</family>
+         </n>
+      </name>
+      <email>evenaliao@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456262</id>
+      </sourcedid>
+      <userid>jmbresolin@global.t-bird.edu</userid>
+      <name>
+         <fn>Justin Bresolin</fn>
+         <n>
+            <given>Justin</given>
+            <family>Bresolin</family>
+         </n>
+      </name>
+      <email>jmbresolin@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456266</id>
+      </sourcedid>
+      <userid>kelly.post@global.t-bird.edu</userid>
+      <name>
+         <fn>Kelly Post</fn>
+         <n>
+            <given>Kelly</given>
+            <family>Post</family>
+         </n>
+      </name>
+      <email>kelly.post@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>0332408</id>
+      </sourcedid>
+      <userid>debbie.liu@thunderbird.edu</userid>
+      <name>
+         <fn>Dennis Guthery</fn>
+         <n>
+            <given>Dennis</given>
+            <family>Guthery</family>
+         </n>
+      </name>
+      <email>debbie.liu@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452678</id>
+      </sourcedid>
+      <userid>kshitij.shetty@global.t-bird.edu</userid>
+      <name>
+         <fn>Kshitij Shetty</fn>
+         <n>
+            <given>Kshitij</given>
+            <family>Shetty</family>
+         </n>
+      </name>
+      <email>kshitij.shetty@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452682</id>
+      </sourcedid>
+      <userid>Roberto.Martinez@global.t-bird.edu</userid>
+      <name>
+         <fn>Roberto Martinez</fn>
+         <n>
+            <given>Roberto</given>
+            <family>Martinez</family>
+         </n>
+      </name>
+      <email>Roberto.Martinez@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1449078</id>
+      </sourcedid>
+      <userid>DevikiGupta@global.t-bird.edu</userid>
+      <name>
+         <fn>Deviki Gupta</fn>
+         <n>
+            <given>Deviki</given>
+            <family>Gupta</family>
+         </n>
+      </name>
+      <email>DevikiGupta@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453897</id>
+      </sourcedid>
+      <userid>Stephen.Sheldon@global.t-bird.edu</userid>
+      <name>
+         <fn>Stephen Sheldon</fn>
+         <n>
+            <given>Stephen</given>
+            <family>Sheldon</family>
+         </n>
+      </name>
+      <email>Stephen.Sheldon@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459910</id>
+      </sourcedid>
+      <userid>jbmaubert@global.t-bird.edu</userid>
+      <name>
+         <fn>Jean-Baptiste Maubert</fn>
+         <n>
+            <given>Jean-Baptiste</given>
+            <family>Maubert</family>
+         </n>
+      </name>
+      <email>jbmaubert@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452100</id>
+      </sourcedid>
+      <userid>sarah.roseen@global.t-bird.edu</userid>
+      <name>
+         <fn>Sarah Roseen</fn>
+         <n>
+            <given>Sarah</given>
+            <family>Roseen</family>
+         </n>
+      </name>
+      <email>sarah.roseen@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453906</id>
+      </sourcedid>
+      <userid>gwen.straley@global.t-bird.edu</userid>
+      <name>
+         <fn>Gwen Straley</fn>
+         <n>
+            <given>Gwen</given>
+            <family>Straley</family>
+         </n>
+      </name>
+      <email>gwen.straley@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456915</id>
+      </sourcedid>
+      <userid>clareli@global.t-bird.edu</userid>
+      <name>
+         <fn>Jiaying Li</fn>
+         <n>
+            <given>Jiaying</given>
+            <family>Li</family>
+         </n>
+      </name>
+      <email>clareli@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1081291</id>
+      </sourcedid>
+      <userid>john.mathis@thunderbird.edu</userid>
+      <name>
+         <fn>John Mathis</fn>
+         <n>
+            <given>John</given>
+            <family>Mathis</family>
+         </n>
+      </name>
+      <email>john.mathis@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458126</id>
+      </sourcedid>
+      <userid>caroline.caverly@global.t-bird.edu</userid>
+      <name>
+         <fn>Caroline Caverly</fn>
+         <n>
+            <given>Caroline</given>
+            <family>Caverly</family>
+         </n>
+      </name>
+      <email>caroline.caverly@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1463536</id>
+      </sourcedid>
+      <userid>patrick.still@global.t-bird.edu</userid>
+      <name>
+         <fn>Patrick Still</fn>
+         <n>
+            <given>Patrick</given>
+            <family>Still</family>
+         </n>
+      </name>
+      <email>patrick.still@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460531</id>
+      </sourcedid>
+      <userid>anirrban.mukherjii@global.t-bird.edu</userid>
+      <name>
+         <fn>Anirrban Mukherjii</fn>
+         <n>
+            <given>Anirrban</given>
+            <family>Mukherjii</family>
+         </n>
+      </name>
+      <email>anirrban.mukherjii@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460532</id>
+      </sourcedid>
+      <userid>Chenshen@global.t-bird.edu</userid>
+      <name>
+         <fn>Chen Shen</fn>
+         <n>
+            <given>Chen</given>
+            <family>Shen</family>
+         </n>
+      </name>
+      <email>Chenshen@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458738</id>
+      </sourcedid>
+      <userid>moliver@global.t-bird.edu</userid>
+      <name>
+         <fn>Mark Oliver</fn>
+         <n>
+            <given>Mark</given>
+            <family>Oliver</family>
+         </n>
+      </name>
+      <email>moliver@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456939</id>
+      </sourcedid>
+      <userid>adityak@global.t-bird.edu</userid>
+      <name>
+         <fn>Aditya Koyyalamudi</fn>
+         <n>
+            <given>Aditya</given>
+            <family>Koyyalamudi</family>
+         </n>
+      </name>
+      <email>adityak@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1455144</id>
+      </sourcedid>
+      <userid>yuezhang@global.t-bird.edu</userid>
+      <name>
+         <fn>Yue Zhang</fn>
+         <n>
+            <given>Yue</given>
+            <family>Zhang</family>
+         </n>
+      </name>
+      <email>yuezhang@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458750</id>
+      </sourcedid>
+      <userid>craig.m.hammond@global.t-bird.edu</userid>
+      <name>
+         <fn>Craig Hammond</fn>
+         <n>
+            <given>Craig</given>
+            <family>Hammond</family>
+         </n>
+      </name>
+      <email>craig.m.hammond@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451539</id>
+      </sourcedid>
+      <userid>jaseem.ar@global.t-bird.edu</userid>
+      <name>
+         <fn>Jaseem Pookandy</fn>
+         <n>
+            <given>Jaseem</given>
+            <family>Pookandy</family>
+         </n>
+      </name>
+      <email>jaseem.ar@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461163</id>
+      </sourcedid>
+      <userid>big.ac@global.t-bird.edu</userid>
+      <name>
+         <fn>Ariya Chiravara</fn>
+         <n>
+            <given>Ariya</given>
+            <family>Chiravara</family>
+         </n>
+      </name>
+      <email>big.ac@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1462366</id>
+      </sourcedid>
+      <userid>story@global.t-bird.edu</userid>
+      <name>
+         <fn>Story Tweedie-Yates</fn>
+         <n>
+            <given>Story</given>
+            <family>Tweedie-Yates</family>
+         </n>
+      </name>
+      <email>story@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461770</id>
+      </sourcedid>
+      <userid>ekobernik@global.t-bird.edu</userid>
+      <name>
+         <fn>Eric Kobernik</fn>
+         <n>
+            <given>Eric</given>
+            <family>Kobernik</family>
+         </n>
+      </name>
+      <email>ekobernik@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1462371</id>
+      </sourcedid>
+      <userid>pakornsak.r@global.t-bird.edu</userid>
+      <name>
+         <fn>Pakornsak Ratanawongpitak</fn>
+         <n>
+            <given>Pakornsak</given>
+            <family>Ratanawongpitak</family>
+         </n>
+      </name>
+      <email>pakornsak.r@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461173</id>
+      </sourcedid>
+      <userid>kefei.wang@global.t-bird.edu</userid>
+      <name>
+         <fn>Kefei Wang</fn>
+         <n>
+            <given>Kefei</given>
+            <family>Wang</family>
+         </n>
+      </name>
+      <email>kefei.wang@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456967</id>
+      </sourcedid>
+      <userid>ankit.dwivedi@global.t-bird.edu</userid>
+      <name>
+         <fn>Ankit Dwivedi</fn>
+         <n>
+            <given>Ankit</given>
+            <family>Dwivedi</family>
+         </n>
+      </name>
+      <email>ankit.dwivedi@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456375</id>
+      </sourcedid>
+      <userid>landonpitcher@global.t-bird.edu</userid>
+      <name>
+         <fn>Landon Pitcher</fn>
+         <n>
+            <given>Landon</given>
+            <family>Pitcher</family>
+         </n>
+      </name>
+      <email>landonpitcher@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1444357</id>
+      </sourcedid>
+      <userid>matt.gottesman@global.t-bird.edu</userid>
+      <name>
+         <fn>Matthew Gottesman</fn>
+         <n>
+            <given>Matthew</given>
+            <family>Gottesman</family>
+         </n>
+      </name>
+      <email>matt.gottesman@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1447970</id>
+      </sourcedid>
+      <userid>shally.sarawagi@global.t-bird.edu</userid>
+      <name>
+         <fn>Shally Sarawagi</fn>
+         <n>
+            <given>Shally</given>
+            <family>Sarawagi</family>
+         </n>
+      </name>
+      <email>shally.sarawagi@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1463600</id>
+      </sourcedid>
+      <userid>Monica.Miller@global.t-bird.edu</userid>
+      <name>
+         <fn>Monica Miller</fn>
+         <n>
+            <given>Monica</given>
+            <family>Miller</family>
+         </n>
+      </name>
+      <email>Monica.Miller@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1462399</id>
+      </sourcedid>
+      <userid>Brittany.Sener@global.t-bird.edu</userid>
+      <name>
+         <fn>Brittany Sener</fn>
+         <n>
+            <given>Brittany</given>
+            <family>Sener</family>
+         </n>
+      </name>
+      <email>Brittany.Sener@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1447978</id>
+      </sourcedid>
+      <userid>peter.graham@global.t-bird.edu</userid>
+      <name>
+         <fn>Peter Graham</fn>
+         <n>
+            <given>Peter</given>
+            <family>Graham</family>
+         </n>
+      </name>
+      <email>peter.graham@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1455196</id>
+      </sourcedid>
+      <userid>ps.kim@global.t-bird.edu</userid>
+      <name>
+         <fn>Pil Seong Kim</fn>
+         <n>
+            <given>Pil Seong</given>
+            <family>Kim</family>
+         </n>
+      </name>
+      <email>ps.kim@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1432962</id>
+      </sourcedid>
+      <userid>JimmiKao@global.t-bird.edu</userid>
+      <name>
+         <fn>Jianmin Gao</fn>
+         <n>
+            <given>Jianmin</given>
+            <family>Gao</family>
+         </n>
+      </name>
+      <email>JimmiKao@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1438973</id>
+      </sourcedid>
+      <userid>melissa.samuelson@thunderbird.edu</userid>
+      <name>
+         <fn>Melissa Samuelson</fn>
+         <n>
+            <given>Melissa</given>
+            <family>Samuelson</family>
+         </n>
+      </name>
+      <email>melissa.samuelson@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1463621</id>
+      </sourcedid>
+      <userid>varun.podar@global.t-bird.edu</userid>
+      <name>
+         <fn>Varun Podar</fn>
+         <n>
+            <given>Varun</given>
+            <family>Podar</family>
+         </n>
+      </name>
+      <email>varun.podar@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1447395</id>
+      </sourcedid>
+      <userid>SowmyaJayanna@global.t-bird.edu</userid>
+      <name>
+         <fn>Sowmya Jayanna</fn>
+         <n>
+            <given>Sowmya</given>
+            <family>Jayanna</family>
+         </n>
+      </name>
+      <email>SowmyaJayanna@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461819</id>
+      </sourcedid>
+      <userid>yudian.tang@global.t-bird.edu</userid>
+      <name>
+         <fn>Yudian Tang</fn>
+         <n>
+            <given>Yudian</given>
+            <family>Tang</family>
+         </n>
+      </name>
+      <email>yudian.tang@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1455210</id>
+      </sourcedid>
+      <userid>saurabh.aphale@global.t-bird.edu</userid>
+      <name>
+         <fn>Saurabh Aphale</fn>
+         <n>
+            <given>Saurabh</given>
+            <family>Aphale</family>
+         </n>
+      </name>
+      <email>saurabh.aphale@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1425166</id>
+      </sourcedid>
+      <userid>jeremiahlim@global.t-bird.edu</userid>
+      <name>
+         <fn>Jeremiah Lim</fn>
+         <n>
+            <given>Jeremiah</given>
+            <family>Lim</family>
+         </n>
+      </name>
+      <email>jeremiahlim@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451010</id>
+      </sourcedid>
+      <userid>ksingh@global.t-bird.edu</userid>
+      <name>
+         <fn>Karna Singh</fn>
+         <n>
+            <given>Karna</given>
+            <family>Singh</family>
+         </n>
+      </name>
+      <email>ksingh@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451012</id>
+      </sourcedid>
+      <userid>lincoln.josh@global.t-bird.edu</userid>
+      <name>
+         <fn>Joshua Lincoln</fn>
+         <n>
+            <given>Joshua</given>
+            <family>Lincoln</family>
+         </n>
+      </name>
+      <email>lincoln.josh@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460036</id>
+      </sourcedid>
+      <userid>Helen-Liu@global.t-bird.edu</userid>
+      <name>
+         <fn>Chao Liu</fn>
+         <n>
+            <given>Chao</given>
+            <family>Liu</family>
+         </n>
+      </name>
+      <email>Helen-Liu@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1444413</id>
+      </sourcedid>
+      <userid>ashish.jere@global.t-bird.edu</userid>
+      <name>
+         <fn>Ashish Jere</fn>
+         <n>
+            <given>Ashish</given>
+            <family>Jere</family>
+         </n>
+      </name>
+      <email>ashish.jere@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456435</id>
+      </sourcedid>
+      <userid>Ana.Lazareff@global.t-bird.edu</userid>
+      <name>
+         <fn>Ana Maria Lazareff</fn>
+         <n>
+            <given>Ana Maria</given>
+            <family>Lazareff</family>
+         </n>
+      </name>
+      <email>Ana.Lazareff@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459441</id>
+      </sourcedid>
+      <userid>Siyin.Chen@global.t-bird.edu</userid>
+      <name>
+         <fn>Siyin Chen</fn>
+         <n>
+            <given>Siyin</given>
+            <family>Chen</family>
+         </n>
+      </name>
+      <email>Siyin.Chen@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451631</id>
+      </sourcedid>
+      <userid>MWilliamson@global.t-bird.edu</userid>
+      <name>
+         <fn>Matthew Williamson</fn>
+         <n>
+            <given>Matthew</given>
+            <family>Williamson</family>
+         </n>
+      </name>
+      <email>MWilliamson@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1455237</id>
+      </sourcedid>
+      <userid>priyankajain@global.t-bird.edu</userid>
+      <name>
+         <fn>Priyanka Jain</fn>
+         <n>
+            <given>Priyanka</given>
+            <family>Jain</family>
+         </n>
+      </name>
+      <email>priyankajain@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1455238</id>
+      </sourcedid>
+      <userid>PuneetMehta@global.t-bird.edu</userid>
+      <name>
+         <fn>Puneet Mehta</fn>
+         <n>
+            <given>Puneet</given>
+            <family>Mehta</family>
+         </n>
+      </name>
+      <email>PuneetMehta@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451049</id>
+      </sourcedid>
+      <userid>estella.he@global.t-bird.edu</userid>
+      <name>
+         <fn>Zhengming He</fn>
+         <n>
+            <given>Zhengming</given>
+            <family>He</family>
+         </n>
+      </name>
+      <email>estella.he@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1464273</id>
+      </sourcedid>
+      <userid>nskankey@global.t-bird.edu</userid>
+      <name>
+         <fn>Nathan Skankey</fn>
+         <n>
+            <given>Nathan</given>
+            <family>Skankey</family>
+         </n>
+      </name>
+      <email>nskankey@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452256</id>
+      </sourcedid>
+      <userid>shubham.mehrotra@global.t-bird.edu</userid>
+      <name>
+         <fn>Shubham Mehrotra</fn>
+         <n>
+            <given>Shubham</given>
+            <family>Mehrotra</family>
+         </n>
+      </name>
+      <email>shubham.mehrotra@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1449251</id>
+      </sourcedid>
+      <userid>pragyaup@global.t-bird.edu</userid>
+      <name>
+         <fn>Pragya Uprety</fn>
+         <n>
+            <given>Pragya</given>
+            <family>Uprety</family>
+         </n>
+      </name>
+      <email>pragyaup@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1450486</id>
+      </sourcedid>
+      <userid>estherbobbin@global.t-bird.edu</userid>
+      <name>
+         <fn>Esther Bobbin</fn>
+         <n>
+            <given>Esther</given>
+            <family>Bobbin</family>
+         </n>
+      </name>
+      <email>estherbobbin@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451691</id>
+      </sourcedid>
+      <userid>abhinavkant@global.t-bird.edu</userid>
+      <name>
+         <fn>Abhinav Kant</fn>
+         <n>
+            <given>Abhinav</given>
+            <family>Kant</family>
+         </n>
+      </name>
+      <email>abhinavkant@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1457701</id>
+      </sourcedid>
+      <userid>shazhou.liu@global.thunderbird.edu</userid>
+      <name>
+         <fn>Sha Zhou Liu</fn>
+         <n>
+            <given>Sha Zhou</given>
+            <family>Liu</family>
+         </n>
+      </name>
+      <email>shazhou.liu@global.thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454698</id>
+      </sourcedid>
+      <userid>navjyot.ukarde@global.t-bird.edu</userid>
+      <name>
+         <fn>Navjyot Ukarde</fn>
+         <n>
+            <given>Navjyot</given>
+            <family>Ukarde</family>
+         </n>
+      </name>
+      <email>navjyot.ukarde@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458906</id>
+      </sourcedid>
+      <userid>DanielSargent@global.t-bird.edu</userid>
+      <name>
+         <fn>Daniel Sargent</fn>
+         <n>
+            <given>Daniel</given>
+            <family>Sargent</family>
+         </n>
+      </name>
+      <email>DanielSargent@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1457705</id>
+      </sourcedid>
+      <userid>gael.marchal@global.t-bird.edu</userid>
+      <name>
+         <fn>Gael Marchal</fn>
+         <n>
+            <given>Gael</given>
+            <family>Marchal</family>
+         </n>
+      </name>
+      <email>gael.marchal@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1084484</id>
+      </sourcedid>
+      <userid>femi.babarinde@thunderbird.edu</userid>
+      <name>
+         <fn>Olufemi Babarinde</fn>
+         <n>
+            <given>Olufemi</given>
+            <family>Babarinde</family>
+         </n>
+      </name>
+      <email>femi.babarinde@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460712</id>
+      </sourcedid>
+      <userid>amy.e.scuderi@global.t-bird.edu</userid>
+      <name>
+         <fn>Amy Scuderi</fn>
+         <n>
+            <given>Amy</given>
+            <family>Scuderi</family>
+         </n>
+      </name>
+      <email>amy.e.scuderi@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452300</id>
+      </sourcedid>
+      <userid>ian.peckham@global.t-bird.edu</userid>
+      <name>
+         <fn>Ian Peckham</fn>
+         <n>
+            <given>Ian</given>
+            <family>Peckham</family>
+         </n>
+      </name>
+      <email>ian.peckham@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456507</id>
+      </sourcedid>
+      <userid>boris.pilipenko@global.t-bird.edu</userid>
+      <name>
+         <fn>Boris Pilipenko</fn>
+         <n>
+            <given>Boris</given>
+            <family>Pilipenko</family>
+         </n>
+      </name>
+      <email>boris.pilipenko@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1463127</id>
+      </sourcedid>
+      <userid>takuma-m@global.t-bird.edu</userid>
+      <name>
+         <fn>Takuma Maeda</fn>
+         <n>
+            <given>Takuma</given>
+            <family>Maeda</family>
+         </n>
+      </name>
+      <email>takuma-m@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1449907</id>
+      </sourcedid>
+      <userid>fei.zhong@global.t-bird.edu</userid>
+      <name>
+         <fn>Fei Zhong</fn>
+         <n>
+            <given>Fei</given>
+            <family>Zhong</family>
+         </n>
+      </name>
+      <email>fei.zhong@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1463733</id>
+      </sourcedid>
+      <userid>Mengwei.Yin@global.t-bird.edu</userid>
+      <name>
+         <fn>Mengwei Yin</fn>
+         <n>
+            <given>Mengwei</given>
+            <family>Yin</family>
+         </n>
+      </name>
+      <email>Mengwei.Yin@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451714</id>
+      </sourcedid>
+      <userid>h.young@global.t-bird.edu</userid>
+      <name>
+         <fn>Ho Young Kim</fn>
+         <n>
+            <given>Ho Young</given>
+            <family>Kim</family>
+         </n>
+      </name>
+      <email>h.young@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454119</id>
+      </sourcedid>
+      <userid>luongthanhmai@global.t-bird.edu</userid>
+      <name>
+         <fn>Mai Luong</fn>
+         <n>
+            <given>Mai</given>
+            <family>Luong</family>
+         </n>
+      </name>
+      <email>luongthanhmai@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1054455</id>
+      </sourcedid>
+      <userid>stephen.wright@thunderbird.edu</userid>
+      <name>
+         <fn>Stephen Wright</fn>
+         <n>
+            <given>Stephen</given>
+            <family>Wright</family>
+         </n>
+      </name>
+      <email>stephen.wright@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460134</id>
+      </sourcedid>
+      <userid>JasonFritz@global.t-bird.edu</userid>
+      <name>
+         <fn>Jason Fritz</fn>
+         <n>
+            <given>Jason</given>
+            <family>Fritz</family>
+         </n>
+      </name>
+      <email>JasonFritz@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451120</id>
+      </sourcedid>
+      <userid>jose.lara@global.t-bird.edu</userid>
+      <name>
+         <fn>Jose Lara</fn>
+         <n>
+            <given>Jose</given>
+            <family>Lara</family>
+         </n>
+      </name>
+      <email>jose.lara@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458338</id>
+      </sourcedid>
+      <userid>kaoru.negishi@global.t-bird.edu</userid>
+      <name>
+         <fn>Kaoru Negishi</fn>
+         <n>
+            <given>Kaoru</given>
+            <family>Negishi</family>
+         </n>
+      </name>
+      <email>kaoru.negishi@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1457145</id>
+      </sourcedid>
+      <userid>Ruben@global.t-bird.edu</userid>
+      <name>
+         <fn>Ruben Arellano</fn>
+         <n>
+            <given>Ruben</given>
+            <family>Arellano</family>
+         </n>
+      </name>
+      <email>Ruben@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1368804</id>
+      </sourcedid>
+      <userid>morgansiegal@global.t-bird.edu</userid>
+      <name>
+         <fn>H. Morgan Siegal</fn>
+         <n>
+            <given>H. Morgan</given>
+            <family>Siegal</family>
+         </n>
+      </name>
+      <email>morgansiegal@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461960</id>
+      </sourcedid>
+      <userid>jboyar@global.t-bird.edu</userid>
+      <name>
+         <fn>Justin Boyar</fn>
+         <n>
+            <given>Justin</given>
+            <family>Boyar</family>
+         </n>
+      </name>
+      <email>jboyar@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1443939</id>
+      </sourcedid>
+      <userid>s.gozali@global.t-bird.edu</userid>
+      <name>
+         <fn>Shaun Gozali</fn>
+         <n>
+            <given>Shaun</given>
+            <family>Gozali</family>
+         </n>
+      </name>
+      <email>s.gozali@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458965</id>
+      </sourcedid>
+      <userid>gregory.osborne@global.t-bird.edu</userid>
+      <name>
+         <fn>Gregory Osborne</fn>
+         <n>
+            <given>Gregory</given>
+            <family>Osborne</family>
+         </n>
+      </name>
+      <email>gregory.osborne@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1464976</id>
+      </sourcedid>
+      <userid>matt.d.berry@global.t-bird.edu</userid>
+      <name>
+         <fn>Matthew Berry</fn>
+         <n>
+            <given>Matthew</given>
+            <family>Berry</family>
+         </n>
+      </name>
+      <email>matt.d.berry@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460168</id>
+      </sourcedid>
+      <userid>emmambrown@global.t-bird.edu</userid>
+      <name>
+         <fn>Emma Brown</fn>
+         <n>
+            <given>Emma</given>
+            <family>Brown</family>
+         </n>
+      </name>
+      <email>emmambrown@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461978</id>
+      </sourcedid>
+      <userid>sj@global.t-bird.edu</userid>
+      <name>
+         <fn>Shinji Yamanaka</fn>
+         <n>
+            <given>Shinji</given>
+            <family>Yamanaka</family>
+         </n>
+      </name>
+      <email>sj@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1426530</id>
+      </sourcedid>
+      <userid>jameslong@global.t-bird.edu</userid>
+      <name>
+         <fn>James Long</fn>
+         <n>
+            <given>James</given>
+            <family>Long</family>
+         </n>
+      </name>
+      <email>jameslong@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458984</id>
+      </sourcedid>
+      <userid>sarjonilla@global.t-bird.edu</userid>
+      <name>
+         <fn>Steven Arjonilla</fn>
+         <n>
+            <given>Steven</given>
+            <family>Arjonilla</family>
+         </n>
+      </name>
+      <email>sarjonilla@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454785</id>
+      </sourcedid>
+      <userid>rohan.verma@global.t-bird.edu</userid>
+      <name>
+         <fn>Rohan Verma</fn>
+         <n>
+            <given>Rohan</given>
+            <family>Verma</family>
+         </n>
+      </name>
+      <email>rohan.verma@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1444573</id>
+      </sourcedid>
+      <userid>jstreen@global.t-bird.edu</userid>
+      <name>
+         <fn>Justin Streen</fn>
+         <n>
+            <given>Justin</given>
+            <family>Streen</family>
+         </n>
+      </name>
+      <email>jstreen@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1457196</id>
+      </sourcedid>
+      <userid>aaronsanchez@global.t-bird.edu</userid>
+      <name>
+         <fn>Aaron Sanchez</fn>
+         <n>
+            <given>Aaron</given>
+            <family>Sanchez</family>
+         </n>
+      </name>
+      <email>aaronsanchez@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1463208</id>
+      </sourcedid>
+      <userid>connorwc@global.t-bird.edu</userid>
+      <name>
+         <fn>Connor Clark</fn>
+         <n>
+            <given>Connor</given>
+            <family>Clark</family>
+         </n>
+      </name>
+      <email>connorwc@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459605</id>
+      </sourcedid>
+      <userid>yuan.zhu@global.t-bird.edu</userid>
+      <name>
+         <fn>Yuan Zhu</fn>
+         <n>
+            <given>Yuan</given>
+            <family>Zhu</family>
+         </n>
+      </name>
+      <email>yuan.zhu@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451192</id>
+      </sourcedid>
+      <userid>abrahmavar@global.t-bird.edu</userid>
+      <name>
+         <fn>Ankush Brahmavar</fn>
+         <n>
+            <given>Ankush</given>
+            <family>Brahmavar</family>
+         </n>
+      </name>
+      <email>abrahmavar@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451197</id>
+      </sourcedid>
+      <userid>hanlichang@global.t-bird.edu</userid>
+      <name>
+         <fn>Han-Li Chang</fn>
+         <n>
+            <given>Han-Li</given>
+            <family>Chang</family>
+         </n>
+      </name>
+      <email>hanlichang@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452402</id>
+      </sourcedid>
+      <userid>abhijit.chakrabarti@global.t-bird.edu</userid>
+      <name>
+         <fn>Abhijit Chakrabarti</fn>
+         <n>
+            <given>Abhijit</given>
+            <family>Chakrabarti</family>
+         </n>
+      </name>
+      <email>abhijit.chakrabarti@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458423</id>
+      </sourcedid>
+      <userid>MLundgren@global.t-bird.edu</userid>
+      <name>
+         <fn>Michael Lundgren</fn>
+         <n>
+            <given>Michael</given>
+            <family>Lundgren</family>
+         </n>
+      </name>
+      <email>MLundgren@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454219</id>
+      </sourcedid>
+      <userid>raghugopal@global.t-bird.edu</userid>
+      <name>
+         <fn>Raghu Gopal</fn>
+         <n>
+            <given>Raghu</given>
+            <family>Gopal</family>
+         </n>
+      </name>
+      <email>raghugopal@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453018</id>
+      </sourcedid>
+      <userid>SharonQiao@global.t-bird.edu</userid>
+      <name>
+         <fn>Ying Qiao</fn>
+         <n>
+            <given>Ying</given>
+            <family>Qiao</family>
+         </n>
+      </name>
+      <email>SharonQiao@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451220</id>
+      </sourcedid>
+      <userid>TylerMcElhaney@global.t-bird.edu</userid>
+      <name>
+         <fn>Tyler McElhaney</fn>
+         <n>
+            <given>Tyler</given>
+            <family>McElhaney</family>
+         </n>
+      </name>
+      <email>TylerMcElhaney@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451827</id>
+      </sourcedid>
+      <userid>carolinasamudio@global.t-bird.edu</userid>
+      <name>
+         <fn>Maria Samudio</fn>
+         <n>
+            <given>Maria</given>
+            <family>Samudio</family>
+         </n>
+      </name>
+      <email>carolinasamudio@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460243</id>
+      </sourcedid>
+      <userid>gregory.derr@global.t-bird.edu</userid>
+      <name>
+         <fn>Gregory Derr</fn>
+         <n>
+            <given>Gregory</given>
+            <family>Derr</family>
+         </n>
+      </name>
+      <email>gregory.derr@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451238</id>
+      </sourcedid>
+      <userid>noah.emery@global.t-bird.edu</userid>
+      <name>
+         <fn>Noah Emery</fn>
+         <n>
+            <given>Noah</given>
+            <family>Emery</family>
+         </n>
+      </name>
+      <email>noah.emery@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1452446</id>
+      </sourcedid>
+      <userid>shilpasahini@global.t-bird.edu</userid>
+      <name>
+         <fn>Shilpa Rekha Sahini</fn>
+         <n>
+            <given>Shilpa Rekha</given>
+            <family>Sahini</family>
+         </n>
+      </name>
+      <email>shilpasahini@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1215654</id>
+      </sourcedid>
+      <userid>richard.ettenson@thunderbird.edu</userid>
+      <name>
+         <fn>Richard Ettenson</fn>
+         <n>
+            <given>Richard</given>
+            <family>Ettenson</family>
+         </n>
+      </name>
+      <email>richard.ettenson@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1450647</id>
+      </sourcedid>
+      <userid>hakanisi@global.t-bird.edu</userid>
+      <name>
+         <fn>Helen Akanisi</fn>
+         <n>
+            <given>Helen</given>
+            <family>Akanisi</family>
+         </n>
+      </name>
+      <email>hakanisi@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1462068</id>
+      </sourcedid>
+      <userid>ghosh.geet@global.t-bird.edu</userid>
+      <name>
+         <fn>Geet Ghosh</fn>
+         <n>
+            <given>Geet</given>
+            <family>Ghosh</family>
+         </n>
+      </name>
+      <email>ghosh.geet@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460870</id>
+      </sourcedid>
+      <userid>gvalenzuela@global.t-bird.edu</userid>
+      <name>
+         <fn>Gabriel Valenzuela</fn>
+         <n>
+            <given>Gabriel</given>
+            <family>Valenzuela</family>
+         </n>
+      </name>
+      <email>gvalenzuela@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456664</id>
+      </sourcedid>
+      <userid>MilesFisher@global.t-bird.edu</userid>
+      <name>
+         <fn>Miles Fisher</fn>
+         <n>
+            <given>Miles</given>
+            <family>Fisher</family>
+         </n>
+      </name>
+      <email>MilesFisher@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1406183</id>
+      </sourcedid>
+      <userid>gregory.unruh@thunderbird.edu</userid>
+      <name>
+         <fn>Gregory Unruh</fn>
+         <n>
+            <given>Gregory</given>
+            <family>Unruh</family>
+         </n>
+      </name>
+      <email>gregory.unruh@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461484</id>
+      </sourcedid>
+      <userid>TetsuyaHamaguchi@global.t-bird.edu</userid>
+      <name>
+         <fn>Tetsuya Hamaguchi</fn>
+         <n>
+            <given>Tetsuya</given>
+            <family>Hamaguchi</family>
+         </n>
+      </name>
+      <email>TetsuyaHamaguchi@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458481</id>
+      </sourcedid>
+      <userid>christian.lorentzen@global.t-bird.edu</userid>
+      <name>
+         <fn>Christian Lorentzen</fn>
+         <n>
+            <given>Christian</given>
+            <family>Lorentzen</family>
+         </n>
+      </name>
+      <email>christian.lorentzen@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459691</id>
+      </sourcedid>
+      <userid>katy.spada@global.t-bird.edu</userid>
+      <name>
+         <fn>Kathryn Spada</fn>
+         <n>
+            <given>Kathryn</given>
+            <family>Spada</family>
+         </n>
+      </name>
+      <email>katy.spada@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1455486</id>
+      </sourcedid>
+      <userid>Baxt@global.t-bird.edu</userid>
+      <name>
+         <fn>Benjamin Axt</fn>
+         <n>
+            <given>Benjamin</given>
+            <family>Axt</family>
+         </n>
+      </name>
+      <email>Baxt@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454285</id>
+      </sourcedid>
+      <userid>fikre.gurja@global.t-bird.edu</userid>
+      <name>
+         <fn>Fikremariam Gurja</fn>
+         <n>
+            <given>Fikremariam</given>
+            <family>Gurja</family>
+         </n>
+      </name>
+      <email>fikre.gurja@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459694</id>
+      </sourcedid>
+      <userid>varun.arora@global.t-bird.edu</userid>
+      <name>
+         <fn>Varun Arora</fn>
+         <n>
+            <given>Varun</given>
+            <family>Arora</family>
+         </n>
+      </name>
+      <email>varun.arora@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460295</id>
+      </sourcedid>
+      <userid>nimish.nathwani@global.t-bird.edu</userid>
+      <name>
+         <fn>Nimish Nathwani</fn>
+         <n>
+            <given>Nimish</given>
+            <family>Nathwani</family>
+         </n>
+      </name>
+      <email>nimish.nathwani@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1439867</id>
+      </sourcedid>
+      <userid>makoto.tomiya@global.t-bird.edu</userid>
+      <name>
+         <fn>Makoto Tomiya</fn>
+         <n>
+            <given>Makoto</given>
+            <family>Tomiya</family>
+         </n>
+      </name>
+      <email>makoto.tomiya@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461503</id>
+      </sourcedid>
+      <userid>vivianche@global.t-bird.edu</userid>
+      <name>
+         <fn>Weiwei Che</fn>
+         <n>
+            <given>Weiwei</given>
+            <family>Che</family>
+         </n>
+      </name>
+      <email>vivianche@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1463916</id>
+      </sourcedid>
+      <userid>andyzengchun@global.t-bird.edu</userid>
+      <name>
+         <fn>Chun Zeng</fn>
+         <n>
+            <given>Chun</given>
+            <family>Zeng</family>
+         </n>
+      </name>
+      <email>andyzengchun@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1462718</id>
+      </sourcedid>
+      <userid>mayao@global.t-bird.edu</userid>
+      <name>
+         <fn>Yao Ma</fn>
+         <n>
+            <given>Yao</given>
+            <family>Ma</family>
+         </n>
+      </name>
+      <email>mayao@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1462721</id>
+      </sourcedid>
+      <userid>indranil.samant@global.t-bird.edu</userid>
+      <name>
+         <fn>Indranil Samant</fn>
+         <n>
+            <given>Indranil</given>
+            <family>Samant</family>
+         </n>
+      </name>
+      <email>indranil.samant@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460319</id>
+      </sourcedid>
+      <userid>davidgrimaud@global.t-bird.edu</userid>
+      <name>
+         <fn>David Grimaud</fn>
+         <n>
+            <given>David</given>
+            <family>Grimaud</family>
+         </n>
+      </name>
+      <email>davidgrimaud@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459121</id>
+      </sourcedid>
+      <userid>brett.davis@global.t-bird.edu</userid>
+      <name>
+         <fn>Brett Davis</fn>
+         <n>
+            <given>Brett</given>
+            <family>Davis</family>
+         </n>
+      </name>
+      <email>brett.davis@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1448304</id>
+      </sourcedid>
+      <userid>vborrowdale@global.t-bird.edu</userid>
+      <name>
+         <fn>Veronica Borrowdale</fn>
+         <n>
+            <given>Veronica</given>
+            <family>Borrowdale</family>
+         </n>
+      </name>
+      <email>vborrowdale@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460324</id>
+      </sourcedid>
+      <userid>LiuMeng@global.t-bird.edu</userid>
+      <name>
+         <fn>Meng Liu</fn>
+         <n>
+            <given>Meng</given>
+            <family>Liu</family>
+         </n>
+      </name>
+      <email>LiuMeng@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1462730</id>
+      </sourcedid>
+      <userid>jing.ma@global.t-bird.edu</userid>
+      <name>
+         <fn>Jing Ma</fn>
+         <n>
+            <given>Jing</given>
+            <family>Ma</family>
+         </n>
+      </name>
+      <email>jing.ma@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459124</id>
+      </sourcedid>
+      <userid>Monica.Munoz@Thunderbird.edu</userid>
+      <name>
+         <fn>Monica Munoz</fn>
+         <n>
+            <given>Monica</given>
+            <family>Munoz</family>
+         </n>
+      </name>
+      <email>Monica.Munoz@Thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453115</id>
+      </sourcedid>
+      <userid>Jordan.Flake@global.t-bird.edu</userid>
+      <name>
+         <fn>Jordan Flake</fn>
+         <n>
+            <given>Jordan</given>
+            <family>Flake</family>
+         </n>
+      </name>
+      <email>Jordan.Flake@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1242176</id>
+      </sourcedid>
+      <userid>ralph.smith@global.t-bird.edu</userid>
+      <name>
+         <fn>Ralph Smith</fn>
+         <n>
+            <given>Ralph</given>
+            <family>Smith</family>
+         </n>
+      </name>
+      <email>ralph.smith@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461542</id>
+      </sourcedid>
+      <userid>ryota.a@global.t-bird.edu</userid>
+      <name>
+         <fn>Ryota Arafuka</fn>
+         <n>
+            <given>Ryota</given>
+            <family>Arafuka</family>
+         </n>
+      </name>
+      <email>ryota.a@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453132</id>
+      </sourcedid>
+      <userid>jessica.gausman@global.t-bird.edu</userid>
+      <name>
+         <fn>Jessica Gausman</fn>
+         <n>
+            <given>Jessica</given>
+            <family>Gausman</family>
+         </n>
+      </name>
+      <email>jessica.gausman@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459145</id>
+      </sourcedid>
+      <userid>raychou@global.t-bird.edu</userid>
+      <name>
+         <fn>Shu-Wei Chou</fn>
+         <n>
+            <given>Shu-Wei</given>
+            <family>Chou</family>
+         </n>
+      </name>
+      <email>raychou@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1283052</id>
+      </sourcedid>
+      <userid>bert.valencia.jr@global.t-bird.edu</userid>
+      <name>
+         <fn>Humberto Valencia Jr.</fn>
+         <n>
+            <given>Humberto</given>
+            <family>Valencia Jr.</family>
+         </n>
+      </name>
+      <email>bert.valencia.jr@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454939</id>
+      </sourcedid>
+      <userid>Rodrigo.G.Castillo@global.t-bird.edu</userid>
+      <name>
+         <fn>Rodrigo Castillo</fn>
+         <n>
+            <given>Rodrigo</given>
+            <family>Castillo</family>
+         </n>
+      </name>
+      <email>Rodrigo.G.Castillo@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454338</id>
+      </sourcedid>
+      <userid>suhailanjum@global.t-bird.edu</userid>
+      <name>
+         <fn>Suhail Anjum</fn>
+         <n>
+            <given>Suhail</given>
+            <family>Anjum</family>
+         </n>
+      </name>
+      <email>suhailanjum@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1455544</id>
+      </sourcedid>
+      <userid>dawn.swearingin@global.t-bird.edu</userid>
+      <name>
+         <fn>Dawn Swearingin</fn>
+         <n>
+            <given>Dawn</given>
+            <family>Swearingin</family>
+         </n>
+      </name>
+      <email>dawn.swearingin@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453145</id>
+      </sourcedid>
+      <userid>vinod.jayavelu@global.t-bird.edu</userid>
+      <name>
+         <fn>Vinod Jayavelu</fn>
+         <n>
+            <given>Vinod</given>
+            <family>Jayavelu</family>
+         </n>
+      </name>
+      <email>vinod.jayavelu@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1294483</id>
+      </sourcedid>
+      <userid>luisvidal@global.t-bird.edu</userid>
+      <name>
+         <fn>Luis Vidal-Dominguez</fn>
+         <n>
+            <given>Luis</given>
+            <family>Vidal-Dominguez</family>
+         </n>
+      </name>
+      <email>luisvidal@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454951</id>
+      </sourcedid>
+      <userid>robert.jansen@global.t-bird.edu</userid>
+      <name>
+         <fn>Robert Jansen</fn>
+         <n>
+            <given>Robert</given>
+            <family>Jansen</family>
+         </n>
+      </name>
+      <email>robert.jansen@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454954</id>
+      </sourcedid>
+      <userid>rathi.shail@global.t-bird.edu</userid>
+      <name>
+         <fn>Shailendra Rathi</fn>
+         <n>
+            <given>Shailendra</given>
+            <family>Rathi</family>
+         </n>
+      </name>
+      <email>shailendrarathi@global.thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1168880</id>
+      </sourcedid>
+      <userid>lauranne.buchanan@thunderbird.edu</userid>
+      <name>
+         <fn>Lauranne Buchanan</fn>
+         <n>
+            <given>Lauranne</given>
+            <family>Buchanan</family>
+         </n>
+      </name>
+      <email>lauranne.buchanan@thunderbird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1450752</id>
+      </sourcedid>
+      <userid>collin.white@global.t-bird.edu</userid>
+      <name>
+         <fn>Collin White</fn>
+         <n>
+            <given>Collin</given>
+            <family>White</family>
+         </n>
+      </name>
+      <email>collin.white@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460369</id>
+      </sourcedid>
+      <userid>helen.wu@global.t-bird.edu</userid>
+      <name>
+         <fn>Yi-Hsuan Wu</fn>
+         <n>
+            <given>Yi-Hsuan</given>
+            <family>Wu</family>
+         </n>
+      </name>
+      <email>helen.wu@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451955</id>
+      </sourcedid>
+      <userid>swecha.bhavana@global.t-bird.edu</userid>
+      <name>
+         <fn>Swecha Bhavana</fn>
+         <n>
+            <given>Swecha</given>
+            <family>Bhavana</family>
+         </n>
+      </name>
+      <email>swecha.bhavana@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453158</id>
+      </sourcedid>
+      <userid>mehagupta@global.t-bird.edu</userid>
+      <name>
+         <fn>Meha Gupta</fn>
+         <n>
+            <given>Meha</given>
+            <family>Gupta</family>
+         </n>
+      </name>
+      <email>mehagupta@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453160</id>
+      </sourcedid>
+      <userid>abhilash.mishra@global.t-bird.edu</userid>
+      <name>
+         <fn>Abhilash Mishra</fn>
+         <n>
+            <given>Abhilash</given>
+            <family>Mishra</family>
+         </n>
+      </name>
+      <email>abhilash.mishra@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1105784</id>
+      </sourcedid>
+      <userid>ivoreu@aol.com</userid>
+      <name>
+         <fn>Ivor Roberts</fn>
+         <n>
+            <given>Ivor</given>
+            <family>Roberts</family>
+         </n>
+      </name>
+      <email>ivoreu@aol.com</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460977</id>
+      </sourcedid>
+      <userid>jasneev.kohli@global.t-bird.edu</userid>
+      <name>
+         <fn>Jasneev Kohli</fn>
+         <n>
+            <given>Jasneev</given>
+            <family>Kohli</family>
+         </n>
+      </name>
+      <email>jasneev.kohli@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1450761</id>
+      </sourcedid>
+      <userid>RobertBigot@global.t-bird.edu</userid>
+      <name>
+         <fn>Robert Bigot</fn>
+         <n>
+            <given>Robert</given>
+            <family>Bigot</family>
+         </n>
+      </name>
+      <email>RobertBigot@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1450763</id>
+      </sourcedid>
+      <userid>shamus.ankrom@global.t-bird.edu</userid>
+      <name>
+         <fn>Shamus Ankrom</fn>
+         <n>
+            <given>Shamus</given>
+            <family>Ankrom</family>
+         </n>
+      </name>
+      <email>shamus.ankrom@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460983</id>
+      </sourcedid>
+      <userid>Megan.Sievert@global.t-bird.edu</userid>
+      <name>
+         <fn>Megan Sievert</fn>
+         <n>
+            <given>Megan</given>
+            <family>Sievert</family>
+         </n>
+      </name>
+      <email>Megan.Sievert@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1437548</id>
+      </sourcedid>
+      <userid>haoran.zheng@global.t-bird.edu</userid>
+      <name>
+         <fn>Haoran Zheng</fn>
+         <n>
+            <given>Haoran</given>
+            <family>Zheng</family>
+         </n>
+      </name>
+      <email>haoran.zheng@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453175</id>
+      </sourcedid>
+      <userid>pankaj.tamrakar@global.t-bird.edu</userid>
+      <name>
+         <fn>Pankaj Tamrakar</fn>
+         <n>
+            <given>Pankaj</given>
+            <family>Tamrakar</family>
+         </n>
+      </name>
+      <email>pankaj.tamrakar@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453176</id>
+      </sourcedid>
+      <userid>rishin84@global.t-bird.edu</userid>
+      <name>
+         <fn>Rishin Patel</fn>
+         <n>
+            <given>Rishin</given>
+            <family>Patel</family>
+         </n>
+      </name>
+      <email>rishin84@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1457984</id>
+      </sourcedid>
+      <userid>lillian.rollins@global.t-bird.edu</userid>
+      <name>
+         <fn>Lillian Rollins</fn>
+         <n>
+            <given>Lillian</given>
+            <family>Rollins</family>
+         </n>
+      </name>
+      <email>lillian.rollins@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1460994</id>
+      </sourcedid>
+      <userid>kent.howe@global.t-bird.edu</userid>
+      <name>
+         <fn>Kent Howe</fn>
+         <n>
+            <given>Kent</given>
+            <family>Howe</family>
+         </n>
+      </name>
+      <email>kent.howe@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456787</id>
+      </sourcedid>
+      <userid>Niky.Chokshi@global.t-bird.edu</userid>
+      <name>
+         <fn>Niky Chokshi</fn>
+         <n>
+            <given>Niky</given>
+            <family>Chokshi</family>
+         </n>
+      </name>
+      <email>Niky.Chokshi@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1459191</id>
+      </sourcedid>
+      <userid>kumar.arunachala@global.t-bird.edu</userid>
+      <name>
+         <fn>Kumar Dodaghatta Arunachala Rao</fn>
+         <n>
+            <given>Kumar</given>
+            <family>Dodaghatta Arunachala Rao</family>
+         </n>
+      </name>
+      <email>kumar.arunachala@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1451981</id>
+      </sourcedid>
+      <userid>amandaroberson@global.t-bird.edu</userid>
+      <name>
+         <fn>Amanda Roberson</fn>
+         <n>
+            <given>Amanda</given>
+            <family>Roberson</family>
+         </n>
+      </name>
+      <email>amandaroberson@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456190</id>
+      </sourcedid>
+      <userid>ssharma@global.t-bird.edu</userid>
+      <name>
+         <fn>Sandeep Sharma</fn>
+         <n>
+            <given>Sandeep</given>
+            <family>Sharma</family>
+         </n>
+      </name>
+      <email>ssharma@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1424943</id>
+      </sourcedid>
+      <userid>davidjdoane@global.t-bird.edu</userid>
+      <name>
+         <fn>David Doane</fn>
+         <n>
+            <given>David</given>
+            <family>Doane</family>
+         </n>
+      </name>
+      <email>davidjdoane@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456797</id>
+      </sourcedid>
+      <userid>yutaka.oyama@global.t-bird.edu</userid>
+      <name>
+         <fn>Yutaka Oyama</fn>
+         <n>
+            <given>Yutaka</given>
+            <family>Oyama</family>
+         </n>
+      </name>
+      <email>yutaka.oyama@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461005</id>
+      </sourcedid>
+      <userid>harsha.tamatam@global.t-bird.edu</userid>
+      <name>
+         <fn>Vardhan Reddy Tamatam Harsha</fn>
+         <n>
+            <given>Vardhan Reddy</given>
+            <family>Tamatam Harsha</family>
+         </n>
+      </name>
+      <email>harsha.tamatam@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1454999</id>
+      </sourcedid>
+      <userid>JulianneDixon@global.t-bird.edu</userid>
+      <name>
+         <fn>Julianne Dixon</fn>
+         <n>
+            <given>Julianne</given>
+            <family>Dixon</family>
+         </n>
+      </name>
+      <email>JulianneDixon@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453797</id>
+      </sourcedid>
+      <userid>briandwyer@global.t-bird.edu</userid>
+      <name>
+         <fn>Brian Dwyer</fn>
+         <n>
+            <given>Brian</given>
+            <family>Dwyer</family>
+         </n>
+      </name>
+      <email>briandwyer@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1444788</id>
+      </sourcedid>
+      <userid>kaengg@global.t-bird.edu</userid>
+      <name>
+         <fn>Phakhaphan Vallasiri</fn>
+         <n>
+            <given>Phakhaphan</given>
+            <family>Vallasiri</family>
+         </n>
+      </name>
+      <email>kaengg@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1464024</id>
+      </sourcedid>
+      <userid>cynthia.rosales@global.t-bird.edu</userid>
+      <name>
+         <fn>Cynthia Rosales</fn>
+         <n>
+            <given>Cynthia</given>
+            <family>Rosales</family>
+         </n>
+      </name>
+      <email>cynthia.rosales@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1458616</id>
+      </sourcedid>
+      <userid>ajauhar@global.t-bird.edu</userid>
+      <name>
+         <fn>Akash Jauhar</fn>
+         <n>
+            <given>Akash</given>
+            <family>Jauhar</family>
+         </n>
+      </name>
+      <email>ajauhar@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1456226</id>
+      </sourcedid>
+      <userid>hitoshi.kume@global.t-bird.edu</userid>
+      <name>
+         <fn>Hitoshi Kume</fn>
+         <n>
+            <given>Hitoshi</given>
+            <family>Kume</family>
+         </n>
+      </name>
+      <email>hitoshi.kume@global.t-bird.edu</email>
+   </person>
+ 
+   <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1453830</id>
+      </sourcedid>
+      <userid>lunbeck@global.t-bird.edu</userid>
+      <name>
+         <fn>Joshua Lunbeck</fn>
+         <n>
+            <given>Joshua</given>
+            <family>Lunbeck</family>
+         </n>
+      </name>
+      <email>lunbeck@global.t-bird.edu</email>
+   </person>
+ 
+   <group>
+      <sourcedid>
+         <id>15020</id>
+      </sourcedid>
+      <description>
+         <short>GF 4276 A3 (2012WI)</short>
+         <long>Global Financial Mkts (GF 4276 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-02</begin>
+         <end>2012-01-13</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15021</id>
+      </sourcedid>
+      <description>
+         <short>GF 4424 A3 (2012WI)</short>
+         <long>MFIs & Enterprise in India (GF 4424 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+         <visible>0</visible>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-01</begin>
+         <end>2012-01-14</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15022</id>
+      </sourcedid>
+      <description>
+         <short>GF 4514 A3 (2012WI)</short>
+         <long>Sustain Dev in Prac: Brazil (GF 4514 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-06</begin>
+         <end>2012-01-20</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15023</id>
+      </sourcedid>
+      <description>
+         <short>GF 4640 A3 (2012WI)</short>
+         <long>Sustainable Bus Dev:CostaRica (GF 4640 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-02</begin>
+         <end>2012-01-16</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15028</id>
+      </sourcedid>
+      <description>
+         <short>GF 5622 A3 (2012WI)</short>
+         <long>Global Institutions Geneva (GF 5622 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-04</begin>
+         <end>2012-01-19</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15030</id>
+      </sourcedid>
+      <description>
+         <short>GF 5671 A3 (2012WI)</short>
+         <long>Global Bus Development:Jordan (GF 5671 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+         <visible>0</visible>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-02</begin>
+         <end>2012-01-19</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15035</id>
+      </sourcedid>
+      <description>
+         <short>SP 4015 A3 (2012WI)</short>
+         <long>Spanish I (SP 4015 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-02</begin>
+         <end>2012-01-20</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15036</id>
+      </sourcedid>
+      <description>
+         <short>SP 4020 A3 (2012WI)</short>
+         <long>Spanish II (SP 4020 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-02</begin>
+         <end>2012-01-20</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15037</id>
+      </sourcedid>
+      <description>
+         <short>GF 5670 A3 (2012WI)</short>
+         <long>South Africa:Emerging Market (GF 5670 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-02</begin>
+         <end>2012-01-20</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <group>
+      <sourcedid>
+         <id>15154</id>
+      </sourcedid>
+      <description>
+         <short>GF 4511 A3 (2012WI)</short>
+         <long>Global Brand Winterim (GF 4511 A3 (2012WI))</long>
+      </description>
+      <org>
+         <orgunit>2012WI</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2012-01-03</begin>
+         <end>2012-01-13</end>
+         <adminperiod>2012WI</adminperiod>
+      </timeframe>
+   </group>
+ 
+   <membership>
+      <sourcedid>
+         <id>15020</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1081291</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456967</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451691</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1425166</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1437548</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453175</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450763</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454939</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451631</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451238</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1447978</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454785</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1457145</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1455144</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459145</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451049</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456939</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450647</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454285</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1455237</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456915</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451197</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451120</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1448304</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452678</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15021</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1438973</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>0</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15022</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1083637</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1455486</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458906</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454999</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1463536</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451981</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459605</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461960</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460983</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453176</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453830</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452682</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1464024</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461542</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453897</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1426530</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1294483</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460994</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15023</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1406183</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460532</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456787</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461770</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1444573</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1283052</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461005</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1447395</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454338</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454219</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459191</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452041</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1455210</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452100</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1462366</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1424943</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15028</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1105784</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1054455</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458984</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461484</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1242176</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456262</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1462730</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1463733</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458616</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460036</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453018</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459441</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1455544</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461819</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461173</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456226</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458481</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458423</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15030</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1168880</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>0</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15035</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459124</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450761</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453115</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1464070</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1463127</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1457701</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1390134</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460712</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>0332408</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15036</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459124</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1368804</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458965</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452300</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460134</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459121</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1457705</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1463600</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1444357</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15037</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1084484</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450486</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459691</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460319</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1449907</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1464976</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460324</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453158</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1432962</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1462399</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453906</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1439867</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1443939</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1450752</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460168</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456266</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458126</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461652</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460369</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1463208</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+   <membership>
+      <sourcedid>
+         <id>15154</id>
+      </sourcedid>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1215654</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459694</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461163</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453132</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453145</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1444413</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454119</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461656</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456797</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1463621</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451010</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1437019</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1462721</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1462068</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1455196</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1459910</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1447970</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460295</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1457196</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458738</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451539</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452446</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454698</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1444788</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451955</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452402</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460977</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1452256</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1455238</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1453160</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1460531</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454954</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456190</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456664</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1449078</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1458750</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451714</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1456507</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461978</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1463916</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1449251</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451012</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1462718</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1454458</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1457984</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1451220</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+ 
+   </membership>
+ 
+</enterprise>

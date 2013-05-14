@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<enterprise>
+   <properties lang="EN">
+      <datasource>IData: Datatel Colleague to Moodle Export TEST</datasource>
+      <datetime>2011-07-13   11:30:00AM</datetime>
+   </properties>
+
+   <group>
+      <sourcedid>
+         <id>11111</id>
+      </sourcedid>
+      <description>
+         <short>Thunderstart 2011</short>
+         <long>Thunderbird 2011 (GL 2001 A3 (2011FA))</long>
+      </description>
+      <org>
+         <orgunit>2011FA</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info>VIRTUAL Campus</meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2011-07-01</begin>
+         <end>2011-12-31</end>
+         <adminperiod>2011FA</adminperiod>
+      </timeframe>
+   </group>
+
+   <membership>
+      <sourcedid>
+         <id>11111</id>
+      </sourcedid>
+
+   </membership>
+
+</enterprise>
+
+

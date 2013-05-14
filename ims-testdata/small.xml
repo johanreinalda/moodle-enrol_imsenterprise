@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<enterprise>
+   <properties lang="EN">
+      <datasource>IData: Datatel Colleague to Moodle Export</datasource>
+      <datetime>2011-09-16   01:21:59PM</datetime>
+   </properties>
+
+  <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1142412</id>
+      </sourcedid>
+      <userid>1142412</userid>
+      <name>
+         <fn>User User</fn>
+         <n>
+            <given>User</given>
+            <family>User</family>
+         </n>
+      </name>
+      <email>1142412@thunderbird.edu</email>
+   </person>
+   
+  <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1461544</id>
+      </sourcedid>
+      <userid>1461544</userid>
+      <name>
+         <fn>User User</fn>
+         <n>
+            <given>User</given>
+            <family>User</family>
+         </n>
+      </name>
+      <email>1461544@thunderbird.edu</email>
+   </person>
+   
+  <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1434281</id>
+      </sourcedid>
+      <userid>1434281</userid>
+      <name>
+         <fn>User User</fn>
+         <n>
+            <given>User</given>
+            <family>User</family>
+         </n>
+      </name>
+      <email>1434281@thunderbird.edu</email>
+   </person>
+   
+  <person>
+      <sourcedid>
+         <source>Colleague to Moodle</source>
+         <id>1091072</id>
+      </sourcedid>
+      <userid>1091072</userid>
+      <name>
+         <fn>User User</fn>
+         <n>
+            <given>User</given>
+            <family>User</family>
+         </n>
+      </name>
+      <email>1091072@thunderbird.edu</email>
+   </person>
+   
+   <group>
+      <sourcedid>
+         <id>14406</id>
+      </sourcedid>
+      <description>
+         <short>GM 4000 A3 (2011FA)</short>
+         <long>Global Political Economy. (GM 4000 A3 (2011FA))</long>
+      </description>
+      <org>
+         <orgunit>2011FA</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info></meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2011-09-06</begin>
+         <end>2011-12-16</end>
+         <adminperiod>2011FA</adminperiod>
+      </timeframe>
+   </group>
+
+   <group>
+      <sourcedid>
+         <id>14893</id>
+      </sourcedid>
+      <description>
+         <short>ACT 4000 C1 (2011FA)</short>
+         <long>Acct From Glbl Perspective I (ACT 4000 C1 (2011FA))</long>
+      </description>
+      <org>
+         <orgunit>2011FA</orgunit>
+      </org>
+      <extension>
+      </extension>
+      <extension>
+         <meeting-info>SNEL 01 M 05:00PM 06:00PM</meeting-info>
+      </extension>
+      <timeframe>
+         <begin>2011-09-16</begin>
+         <end>2011-12-16</end>
+         <adminperiod>2011FA</adminperiod>
+      </timeframe>
+   </group>
+
+   <membership>
+      <sourcedid>
+         <id>14406</id>
+      </sourcedid>
+
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1142412</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1461544</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1434281</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+
+   </membership>
+
+   <membership>
+      <sourcedid>
+         <id>14893</id>
+      </sourcedid>
+
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1091072</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="02">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+
+   </membership>
+
+</enterprise>
+
+      <member>
+         <sourcedid>
+            <source>Colleague to Moodle</source>
+            <id>1071854</id>
+         </sourcedid>
+         <idtype idtype="1"/>
+         <role roletype="01">
+            <userid/>
+            <status>1</status>
+         </role>
+      </member>
+         

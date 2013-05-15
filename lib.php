@@ -1206,7 +1206,7 @@ function snapshot_unenrol($coursecodes,$central_member_list) {
 				// This now has a pre-check for the enrolment group that is imsenterprise so we no longer have to check for it later - APG
 				// In 2.4, cannot used mixed parameters, so last where clause is collapsed into single statement, with empty parameters - JKR 20130514
 			    if ($contextusers = get_role_users($role->id, $context, false, 'u.id,u.username,ra.roleid, ra.itemid',
-			        			'u.id', null,'', '', '', 'ra.itemid = ' . $enrolment_group->id, Array())) {
+			        			'u.id', null,'', '', '', 'ra.itemid = ' . $enrolment_group->id, null)) {
 			        			 
 					//$this->log_line( "    MOODLE contextusers:\n" . print_r($contextusers,true));
 					

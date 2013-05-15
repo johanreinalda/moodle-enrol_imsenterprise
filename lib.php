@@ -1199,7 +1199,7 @@ function snapshot_unenrol($coursecodes,$central_member_list) {
 
 			foreach ($roles as $role) {
 				//$role->name is invalid in >= 2.4, use role_get_name($role) - JKR
-				$this->log_line("  ROLE: $role->id (" . role_get_name($role) . ")" );
+				//$this->log_line("  ROLE: $role->id (" . role_get_name($role) . ")" );
 				
 				//get list of Moodle users in this role in  course
 				

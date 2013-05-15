@@ -462,7 +462,7 @@ function process_group_tag($tagcontents) {
             $coursecode = trim($coursecode);
             if (!$DB->get_field('course', 'id', array('idnumber'=>$coursecode))) {
                 if (!$createnewcourses) {
-                    $this->log_line("Course $coursecode not found in Moodle's course idnumbers.");
+                    $this->log_line("Course $coursecode not found in Moodle's course idnumbers, and not creating new course!");
                     $this->errorCount++; // shown at end - JKR
                 } else {
                     // Set shortname to description or description to shortname if one is set but not the other.
@@ -602,13 +602,13 @@ function process_group_tag($tagcontents) {
             }
             // else we should modify an existing course - JKR
             else {
-            	
             	if ($old_course=$DB->get_record('course',array('idnumber'=>$coursecode))) {
             		//do nothing
             		//				}
             		//				if (is_object($old_course)) {
             		$this->log_line("Modifying existing course id=" . $old_course->id );
-            			
+            		$course = new stdClass();
+            		
             		//THIS NEEDS TO BE LOOKED AT - JKR 20101203
             		//the course->enrol field no longer exists in 2.0
             		//					if ($old_course->enrol != 'imsenterprise') {

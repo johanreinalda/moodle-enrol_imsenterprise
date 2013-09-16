@@ -1224,8 +1224,8 @@ function snapshot_unenrol($coursecodes,$central_member_list) {
 			}  /* for each role */
 		}  /* if enrolment_group exists */
 		else {
-			$this->log_line("WARNING: enrolment_group 'imsenterprise' NOT found for this course!");
-			$this->warningCount++;
+			//$this->log_line("WARNING: enrolment_group 'imsenterprise' NOT found for this (probably new) course!");
+			//$this->warningCount++;
 		}
 	}  /* for each course */
 	

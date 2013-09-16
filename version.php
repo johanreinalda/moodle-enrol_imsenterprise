@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2012112900;        // The current plugin version for Moodle 2.4
-$plugin->requires  = 2012112900;        // Requires this Moodle version 2.4
+$plugin->version   = 2012112901;        // The current plugin version for Moodle 2.3
+$plugin->requires  = 2012112900;        // Requires this Moodle version 2.3
 $plugin->component = 'enrol_imsenterprise'; // Full name of the plugin (used for diagnostics)
 $plugin->cron      = 60;

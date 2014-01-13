@@ -28,5 +28,6 @@ CREATE TABLE IF NOT EXISTS `mdl_tbird_course_info` (
   `courseid` bigint(10) unsigned NOT NULL,
   `name` varchar(50) NOT NULL DEFAULT '',
   `value` varchar(2048) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `courseinfo` (`courseid`,`name`)
 ) DEFAULT CHARSET=utf8 COMMENT='Holds additional info about courses by thunderbird.edu' ;

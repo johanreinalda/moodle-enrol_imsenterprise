@@ -105,6 +105,7 @@ function cron() {
         $this->logfp = fopen($logtolocation, 'a');
     }
 
+    $fileisnew = false;
     if ( file_exists($filename) ) {
         @set_time_limit(0);
         $this->starttime = time();
@@ -125,11 +126,11 @@ function cron() {
         if(empty($prev_path)  || ($filename != $prev_path)) {
             $fileisnew = true;
         } elseif(isset($prev_time) && ($filemtime <= $prev_time)) {
-            $fileisnew = false;
+
             $this->log_line('File modification time is not more recent than last update - skipping processing.');
         } elseif(isset($prev_md5) && ($md5 == $prev_md5)) {
-            $fileisnew = false;
-            $this->log_line('File MD5 hash is same as on last update - skipping processing.');
+
+        	$this->log_line('File MD5 hash is same as on last update - skipping processing.');
         } else {
             $fileisnew = true; // Let's process it!
         }
@@ -246,7 +247,7 @@ function cron() {
 	//see if we need to look at hiding course after end-date - JKR
     if($autohide) $this->process_course_autohide();
 
-    if (!empty($mailadmins)) {
+    if (!empty($mailadmins) && $fileisnew) {
         $msg = "An IMS enrolment has been carried out within Moodle.\nTime taken: $timeelapsed seconds.\n\n";
         if(!empty($logtolocation)){
             if($this->logfp){
@@ -263,7 +264,7 @@ function cron() {
 
         $eventdata = new stdClass();
         $eventdata->modulename        = 'moodle';
-        $eventdata->component         = 'imsenterprise';
+        $eventdata->component         = 'enrol_imsenterprise';
         $eventdata->name              = 'imsenterprise_enrolment';
         $eventdata->userfrom          = get_admin();
         $eventdata->userto            = get_admin();
@@ -485,13 +486,13 @@ function process_group_tag($tagcontents) {
                     $course->fullname = $group->description;
                     $course->shortname = $group->shortname;
                     if (!empty($group->fulldescription)) {
-                        $course->summary = format_text($group->fulldescription, FORMAT_HTML);
+                        // clean out strange ASCII ISO-8859-1 values and format as UTF8
+                        $summary = iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $group->fulldescription);
+                        $course->summary = format_text($summary,FORMAT_HTML);
                     }
                     $course->idnumber = $coursecode;
                     $course->format = $courseconfig->format;
                     $course->visible = $courseconfig->visible;
-                    $course->numsections = $courseconfig->numsections;
-                    $course->hiddensections = $courseconfig->hiddensections;
                     $course->newsitems = $courseconfig->newsitems;
                     $course->showgrades = $courseconfig->showgrades;
                     $course->showreports = $courseconfig->showreports;
@@ -503,7 +504,7 @@ function process_group_tag($tagcontents) {
                     // Insert default names for teachers/students, from the current language
 
                     // Handle course categorisation (taken from the group.org.orgunit field if present)
-                    if (strlen($group->category)>0) {
+                    if (!empty($group->category)) {
                         // If the category is defined and exists in Moodle, we want to store it in that one
                         if ($catid = $DB->get_field('course_categories', 'id', array('name'=>$group->category))) {
                             $course->category = $catid;
@@ -530,10 +531,10 @@ function process_group_tag($tagcontents) {
                         } else {
                             // If not found and not allowed to create, stick with default
                             $this->log_line('Category '.$group->category.' not found in Moodle database, so using default category instead.');
-                            $course->category = 1;
+                            $course->category = $this->get_default_category_id();
                         }
                     } else {
-                        $course->category = 1;
+                        $course->category = $this->get_default_category_id();
                     }
                     $course->timecreated = time();
                     $course->startdate = time();
@@ -555,11 +556,8 @@ function process_group_tag($tagcontents) {
                     $course = $DB->get_record('course', array('id' => $courseid));
                     blocks_add_default_course_blocks($course);
 
-                    $section = new stdClass();
-                    $section->course = $course->id;   // Create a default section.
-                    $section->section = 0;
-                    $section->summaryformat = FORMAT_HTML;
-                    $section->id = $DB->insert_record("course_sections", $section);
+                    // Create default 0-section
+                    course_create_sections_if_missing($course, 0);
 
                     add_to_log(SITEID, "course", "new", "view.php?id=$course->id", "$course->fullname (ID $course->id)");
 
@@ -657,9 +655,11 @@ function process_group_tag($tagcontents) {
             			}
             		}
             		if(intval($updatesummary)>0){
-            			if (!empty($group->fulldescription) && $old_course->summary != addslashes($group->fulldescription)) {
+            			if (!empty($group->fulldescription)) {
             				$course->id=$old_course->id;
-            				$course->summary=addslashes($group->fulldescription);
+            				// clean out strange ASCII values and format as UTF8
+            				$summary = iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $group->fulldescription);
+            				$course->summary = format_text($summary,FORMAT_HTML);
             				$this->log_line($coursecode.': Course summary updated');
             			}
             		}
@@ -681,7 +681,7 @@ function process_group_tag($tagcontents) {
             			}
             		}
             		if (!empty($course->id)) {
-            			//$this->log_line('New course object:');
+            			//$this->log_line('Modified course object:');
             			//$this->log_line( print_r($course,true) );
             			$DB->update_record('course', $course);
             		}
@@ -827,9 +827,16 @@ function process_person_tag($tagcontents){
     if($recstatus==3){
 
         if($imsdeleteusers){ // If we're allowed to delete user records
-            // Make sure their "deleted" field is set to one
-            $DB->set_field('user', 'deleted', 1, array('username'=>$person->username));
-            $this->log_line("Marked user record for user '$person->username' (ID number $person->idnumber) as deleted.");
+			// Do not dare to hack the user.deleted field directly in database!!!
+            if ($user = $DB->get_record('user', array('username'=>$person->username, 'mnethostid'=>$CFG->mnet_localhost_id, 'deleted'=>0))) {
+                if (delete_user($user)) {
+                    $this->log_line("Deleted user '$person->username' (ID number $person->idnumber).");
+                } else {
+                    $this->log_line("Error deleting '$person->username' (ID number $person->idnumber).");
+                }
+            } else {
+                $this->log_line("Can not delete user '$person->username' (ID number $person->idnumber) - user does not exist.");
+            }
         }else{
             $this->log_line("Ignoring deletion request for user '$person->username' (ID number $person->idnumber).");
         }
@@ -848,7 +855,7 @@ function process_person_tag($tagcontents){
             } else {
 
             // If they don't exist and they have a defined username, and $createnewusers == true, we create them.
-            $person->lang = 'manual'; //TODO: this needs more work due to multiauth changes
+            $person->lang = $CFG->lang;
             $person->auth = $defaultauthentication;
             
             //always set the local (manual) default password
@@ -1033,7 +1040,7 @@ function process_membership_tag($tagcontents){
                 // The actual processing (ensuring a group record exists, etc) occurs below, in the enrol-a-student clause
             }
 
-            $rolecontext = get_context_instance(CONTEXT_COURSE, $ship->courseid);
+            $rolecontext = context_course::instance($ship->courseid);
             $rolecontext = $rolecontext->id; // All we really want is the ID
 //$this->log_line("Context instance for course $ship->courseid is...");
 //print_r($rolecontext);
@@ -1103,7 +1110,8 @@ function process_membership_tag($tagcontents){
                         }
                         // Add the user-to-group association if it doesn't already exist
                         if($member->groupid) {
-                            groups_add_member($member->groupid, $memberstoreobj->userid);
+                            groups_add_member($member->groupid, $memberstoreobj->userid,
+                            	'enrol_imsenterprise', $einstance->id);
                         }
                     } // End of group-enrolment (from member.role.extension.cohort tag)
 
@@ -1215,7 +1223,7 @@ function snapshot_unenrol($coursecodes,$central_member_list) {
 					//loop through moodle users in this role and compare with IMS users
 					foreach ($contextusers as $moodle_user) {
 						//$this->log_line("    MOODLE CONTEXT SINGLE USER: $moodle_user->id ($moodle_user->username, Enrol=$moodle_user->itemid, Keep=$keep_informal)");
-						if (!in_array($moodle_user->id,$central_userids[$course->id])) {
+						if (!isset($central_userids[$course->id]) or !in_array($moodle_user->id,$central_userids[$course->id])) {
 							$this->unenrol_user($enrolment_group, $moodle_user->id);
 							$this->log_line("User $moodle_user->username removed from role $role->id from course site $course->id because no longer has this role in central database.");
 						}
@@ -1363,6 +1371,34 @@ function load_role_mappings() {
     }
 }
 
+/**
+ * Called whenever anybody tries (from the normal interface) to remove a group
+ * member which is registered as being created by this component. (Not called
+ * when deleting an entire group or course at once.)
+ * @param int $itemid Item ID that was stored in the group_members entry
+ * @param int $groupid Group ID
+ * @param int $userid User ID being removed from group
+ * @return bool True if the remove is permitted, false to give an error
+ */
+function enrol_imsenterprise_allow_group_member_remove($itemid, $groupid, $userid) {
+	return false;
+}
+
+/**
+ * Get the default category id (often known as 'Miscellaneous'),
+ * statically cached to avoid multiple DB lookups on big imports.
+ *
+ * @return int id of default category.
+ */
+private function get_default_category_id() {
+	static $defaultcategoryid = null;
+
+	if ($defaultcategoryid === null) {
+		$category = get_course_category();
+		$defaultcategoryid = $category->id;
+	}
+
+	return $defaultcategoryid;
+}
+
 } // end of class
-
-

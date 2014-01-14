@@ -139,11 +139,11 @@ function cron() {
 
             $listoftags = array('group', 'person', 'member', 'membership', 'comments', 'properties'); // The list of tags which should trigger action (even if only cache trimming)
             $this->continueprocessing = true; // The <properties> tag is allowed to halt processing if we're demanding a matching target
-
+            $line = 0;
+            
             // FIRST PASS: Run through the file and process the group/person entries
             if (($fh = fopen($filename, "r")) != false) {
-
-                $line = 0;
+				$this->log_line('Processing file...');
                 while ((!feof($fh)) && $this->continueprocessing) {
 
                     $line++;
@@ -227,7 +227,7 @@ function cron() {
 
     		$this->log_line('');  // for ease of reading - JKR
             $timeelapsed = time() - $this->starttime;
-            $this->log_line('Process has completed. Time taken: '.$timeelapsed.' seconds.');
+            $this->log_line('Process has completed. Time taken: '.$timeelapsed.' seconds, ' . $line . ' lines');
 
 
         } // END of "if file is new"

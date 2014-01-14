@@ -182,7 +182,11 @@ function cron() {
                 fclose($fh);
                 fix_course_sortorder();
             } // end of if(file_open) for first pass
-
+			else {
+				//fopen() failed
+				$this->errorCount++;
+				$this->log_line('Cannot open file!');
+			}
             /*
 
 

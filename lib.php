@@ -20,8 +20,7 @@
  * This plugin lets the user specify an IMS Enterprise file to be processed.
  * The IMS Enterprise file is mainly parsed on a regular cron,
  * but can also be imported via the UI (Admin Settings).
- * @package    enrol
- * @subpackage imsenterprise
+ * @package    enrol_imsenterprise
  * @copyright  2010 Eugene Venter
  * @author     Eugene Venter - based on code by Dan Stowell
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -87,7 +86,6 @@ function cron() {
     $prev_md5           = $this->get_config('prev_md5');
     $prev_path          = $this->get_config('prev_path');
 	$snapshotunenrol	= $this->get_config('snapshotunenrol');
-    $autohide           = $this->get_config('autohidecourse');
 
 	// track courses for snapshot unenrol - JKR
 	$coursecodes = Array();
@@ -117,6 +115,8 @@ function cron() {
 
         // Make sure we understand how to map the IMS-E roles to Moodle roles
         $this->load_role_mappings();
+        // Make sure we understand how to map the IMS-E course names to Moodle course names.
+        $this->load_course_mappings();
 
         $md5 = md5_file($filename); // NB We'll write this value back to the database at the end of the cron
         $filemtime = filemtime($filename);
@@ -126,11 +126,9 @@ function cron() {
         if(empty($prev_path)  || ($filename != $prev_path)) {
             $fileisnew = true;
         } elseif(isset($prev_time) && ($filemtime <= $prev_time)) {
-
             $this->log_line('File modification time is not more recent than last update - skipping processing.');
         } elseif(isset($prev_md5) && ($md5 == $prev_md5)) {
-
-        	$this->log_line('File MD5 hash is same as on last update - skipping processing.');
+            $this->log_line('File MD5 hash is same as on last update - skipping processing.');
         } else {
             $fileisnew = true; // Let's process it!
         }
@@ -173,13 +171,11 @@ function cron() {
                     } // End of while-tags-are-detected
                 } // end of while loop
 
-//THIS NEEDS TESTING - JKR
                 if($snapshotunenrol){
 					$this->snapshot_unenrol($coursecodes,$central_member_list);
 				}
-//THIS NEEDS TESTING
 
-                fclose($fh);
+				fclose($fh);
                 fix_course_sortorder();
             } // end of if(file_open) for first pass
 			else {
@@ -247,9 +243,6 @@ function cron() {
     }else{ // end of if(file_exists)
         $this->log_line('File not found: '.$filename);
     }
-
-	//see if we need to look at hiding course after end-date - JKR
-    if($autohide) $this->process_course_autohide();
 
     if (!empty($mailadmins) && $fileisnew) {
         $msg = "An IMS enrolment has been carried out within Moodle.\nTime taken: $timeelapsed seconds.\n\n";
@@ -355,16 +348,9 @@ function process_group_tag($tagcontents) {
     $createnewcategories    = $this->get_config('createnewcategories');
 
     // custom settings added - JKR
-    $useshortname			= $this->get_config('useshortname');
-    $updatesummary			= $this->get_config('updatesummary');
-    $updatecategory			= $this->get_config('updatecategory');
-    $updatestartdate		= $this->get_config('updatestartdate');
-    $updateshortname		= $this->get_config('updateshortname');
-    $updatefullname			= $this->get_config('updatefullname');
     $updatevisibility		= $this->get_config('updatevisibility');
     $coursenotenrollable	= $this->get_config('coursenotenrollable');
     $categoryvisible		= $this->get_config('categoryvisible');
-    
     // end of custom settings
     
     // Process tag contents
@@ -372,34 +358,23 @@ function process_group_tag($tagcontents) {
     if (preg_match('{<sourcedid>.*?<id>(.+?)</id>.*?</sourcedid>}is', $tagcontents, $matches)) {
         $group->coursecode = trim($matches[1]);
     }
-    //see if we use the course shortname - JKR
-    if(intval($useshortname) > 0){
-    	if (preg_match('{<description>.*?<short>(.*?)</short>.*?</description>}is', $tagcontents, $matches)) {
-    		$group->shortname = trim($matches[1]);
-    	}
-    	if (preg_match('{<description>.*?<long>(.*?)</long>.*?</description>}is', $tagcontents, $matches)){
-    		$group->description = trim($matches[1]);
-    	} else {
-    		$group->description = '';
-    	}
-    }else if(preg_match('{<description>.*?<short>(.*?)</short>.*?</description>}is', $tagcontents, $matches)) {
-		$group->shortname = $group->coursecode;
-		$group->description = trim($matches[1]);
-    } else {
-		$group->shortname = $group->coursecode;
-		$group->description = $group->coursecode;
+
+    if (preg_match('{<description>.*?<long>(.*?)</long>.*?</description>}is', $tagcontents, $matches)) {
+        $group->long = trim($matches[1]);
     }
-    
     if (preg_match('{<description>.*?<short>(.*?)</short>.*?</description>}is', $tagcontents, $matches)) {
-        $group->shortname = trim($matches[1]);
+        $group->short = trim($matches[1]);
     }
-      
     if (preg_match('{<description>.*?<full>(.*?)</full>.*?</description>}is', $tagcontents, $matches)) {
-        $group->fulldescription = trim($matches[1]);
+        $group->full = trim($matches[1]);
     }
+
     if (preg_match('{<org>.*?<orgunit>(.*?)</orgunit>.*?</org>}is', $tagcontents, $matches)) {
         $group->category = trim($matches[1]);
     }
+
+    $recstatus = ($this->get_recstatus($tagcontents, 'group'));
+    //echo "<p>get_recstatus for this group returned $recstatus</p>";
 
     // check start date of course - JKR
     if(preg_match('{<timeframe>.*?<begin>(.*?)</begin>.*?</timeframe>}is', $tagcontents, $matches)){
@@ -430,14 +405,12 @@ function process_group_tag($tagcontents) {
     //with zero or one row per courseid - JKR
     if(preg_match('{<extension>.*?<meeting-info>(.*?)</meeting-info>.*?</extension>}is', $tagcontents, $matches)){
     	$group->meeting_info = trim($matches[1]);
-    	$this->log_line('Course ' . $group->shortname . ' meeting info: ' . $group->meeting_info);
+    	$this->log_line('Course ' . $group->coursecode . ' meeting info: ' . $group->meeting_info);
     } else {
     	$group->meeting_info = '';
     }
-    
-    $recstatus = ($this->get_recstatus($tagcontents, 'group'));
-    //echo "<p>get_recstatus for this group returned $recstatus</p>";
-
+    // end custom code - JKR
+        
     if (!(strlen($group->coursecode)>0)) {
         $this->log_line('Error at line '.$line.': Unable to find course code in \'group\' element.');
         $this->errorCount++;
@@ -470,30 +443,34 @@ function process_group_tag($tagcontents) {
                     $this->log_line("Course $coursecode not found in Moodle's course idnumbers, and not creating new course!");
                     $this->errorCount++; // shown at end - JKR
                 } else {
-                    // Set shortname to description or description to shortname if one is set but not the other.
-                    $nodescription = !isset($group->description);
-                    $noshortname = !isset($group->shortname);
-                    if ( $nodescription && $noshortname) {
-                        // If neither short nor long description are set let if fail
-                        $this->log_line("Neither long nor short name are set for $coursecode");
-                    } else if ($nodescription) {
-                        // If short and ID exist, then give the long short's value, then give short the ID's value
-                        $group->description = $group->shortname;
-                        $group->shortname = $coursecode;
-                    } else if ($noshortname) {
-                        // If long and ID exist, then map long to long, then give short the ID's value.
-                        $group->shortname = $coursecode;
-                    }
+
                     // Create the (hidden) course(s) if not found
                     $courseconfig = get_config('moodlecourse'); // Load Moodle Course shell defaults
+
+                    // New course.
                     $course = new stdClass();
-                    $course->fullname = $group->description;
-                    $course->shortname = $group->shortname;
-                    if (!empty($group->fulldescription)) {
-                        // clean out strange ASCII ISO-8859-1 values and format as UTF8
-                        $summary = iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $group->fulldescription);
-                        $course->summary = format_text($summary,FORMAT_HTML);
+                    foreach ($this->coursemappings as $courseattr => $imsname) {
+
+                        if ($imsname == 'ignore') {
+                            continue;
+                        }
+
+                        // Check if the IMS file contains the mapped tag, otherwise fallback on coursecode.
+                        if ($imsname == 'coursecode') {
+                            $course->{$courseattr} = $coursecode;
+                        } else if (!empty($group->{$imsname})) {
+                            $course->{$courseattr} = $group->{$imsname};
+                        } else {
+                            $this->log_line('No ' . $imsname . ' description tag found for ' . $coursecode . ' coursecode, using ' . $coursecode . ' instead');
+                            $course->{$courseattr} = $coursecode;
+                        }
                     }
+
+                    // clean out strange ASCII ISO-8859-1 values and format as UTF8
+                    if (!empty($course->summary)) {
+                        $course->summary = format_text(iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $course->summary),FORMAT_HTML);
+                    }
+                    
                     $course->idnumber = $coursecode;
                     $course->format = $courseconfig->format;
                     $course->visible = $courseconfig->visible;
@@ -504,7 +481,6 @@ function process_group_tag($tagcontents) {
                     $course->groupmode = $courseconfig->groupmode;
                     $course->groupmodeforce = $courseconfig->groupmodeforce;
                     $course->enablecompletion = $courseconfig->enablecompletion;
-                    $course->completionstartonenrol = $courseconfig->completionstartonenrol;
                     // Insert default names for teachers/students, from the current language
 
                     // Handle course categorisation (taken from the group.org.orgunit field if present)
@@ -550,6 +526,8 @@ function process_group_tag($tagcontents) {
                     	$course->enrollable = 0;
                     }
                     
+            		//$this->log_line('New course object:');
+            		//$this->log_line( print_r($course,true) );
                     $courseid = $DB->insert_record('course', $course);
 
                     // Setup default enrolment plugins
@@ -568,16 +546,16 @@ function process_group_tag($tagcontents) {
                     $this->log_line("Created course $coursecode in Moodle (Moodle ID is $course->id)");
                     
                     //now we need to store the end date, if set - JKR
-                    if( $group->enddate <> "" and is_int($group->enddate)){
+                    if( $group->enddate <> '' and is_int($group->enddate)){
                     	$autohide = new stdClass;
                     	$autohide->courseid = $course->id;
                     	$autohide->enddate = $group->enddate;
                     	//$this->log_line("Auto-hide record: " . print_r($autohide,true));
                     	if(!$DB->insert_record(TBIRD_COURSE_AUTOHIDE_TABLE,$autohide)) {
-                    		$this->log_line('Error adding autohide end date to table.');
+                    		$this->log_line('Error adding course end date to table.');
                     		$this->errorCount++;
                     	} else {
-                    		$this->log_line("Created autohide end date as $group->enddate");
+                    		$this->log_line("Created course end date as $group->enddate");
                     	}
                     }
                     	
@@ -605,19 +583,9 @@ function process_group_tag($tagcontents) {
             // else we should modify an existing course - JKR
             else {
             	if ($old_course=$DB->get_record('course',array('idnumber'=>$coursecode))) {
-            		//do nothing
-            		//				}
-            		//				if (is_object($old_course)) {
             		$this->log_line("Modifying existing course id=" . $old_course->id );
             		$course = new stdClass();
             		
-            		//THIS NEEDS TO BE LOOKED AT - JKR 20101203
-            		//the course->enrol field no longer exists in 2.0
-            		//					if ($old_course->enrol != 'imsenterprise') {
-            		//						$course->id=$old_course->id;
-            		//						$course->enrol='imsenterprise';
-            		//						$this->log_line($coursecode.' processed by IMS Enterprise');
-            		//					}
             		if(intval($updatevisibility)>0){
             			// if we don't get a visible tag from XML,
             			// we do NOT want to modify the course visibility
@@ -635,54 +603,36 @@ function process_group_tag($tagcontents) {
             				}
             			}
             		}
-            		//if enabled, allow course shortname to be updated from IMS data - JKR 20090731
-            		if(intval($updateshortname)>0){
-            			if($old_course->shortname != addslashes($group->shortname) && !empty($group->shortname)) {
-            				$course->id=$old_course->id;
-            				$course->shortname=addslashes($group->shortname);
-            				$this->log_line($coursecode.': Course shortname updated from '.$old_course->shortname.' to '.$course->shortname);
+
+            		foreach ($this->coursemappings as $courseattr => $imsname) {
+            		
+            			if ($imsname == 'ignore') {
+            				continue;
             			}
-            		}
-            		if(intval($updatefullname)>0){
-            			if (intval($useshortname)==0 || strlen($group->description)==0) {
-            				if ($old_course->fullname != addslashes($group->shortname) && !empty($group->shortname)) {
-            					$course->id=$old_course->id;
-            					$course->fullname=addslashes($group->shortname);
-            					$this->log_line($coursecode.': Course fullname updated from '.$old_course->fullname.' to '.$course->fullname);
-            				}
+            		
+            			// Check if the IMS file contains the mapped tag, otherwise fallback on coursecode.
+            			if ($imsname == 'coursecode') {
+                            $course->id=$old_course->id;
+            				$course->{$courseattr} = $coursecode;
+            			} else if (!empty($group->{$imsname})) {
+           					$course->id=$old_course->id;
+            				$course->{$courseattr} = $group->{$imsname};
             			} else {
-            				if ($old_course->fullname != addslashes($group->description) && !empty($group->description)) {
-            					$course->id=$old_course->id;
-            					$course->fullname=addslashes($group->description);
-            					$this->log_line($coursecode.': Course fullname updated from '. $DB->get_field('course','fullname',array('id'=>$course->id)) . ' to ' . $course->fullname);
-            				}
+            				$this->log_line('No ' . $imsname . ' description tag found for ' . $coursecode . ' coursecode, using ' . $coursecode . ' instead');
+                            $course->id=$old_course->id;
+            				$course->{$courseattr} = $coursecode;
             			}
             		}
-            		if(intval($updatesummary)>0){
-            			if (!empty($group->fulldescription)) {
-            				$course->id=$old_course->id;
-            				// clean out strange ASCII values and format as UTF8
-            				$summary = iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $group->fulldescription);
-            				$course->summary = format_text($summary,FORMAT_HTML);
-            				$this->log_line($coursecode.': Course summary updated');
-            			}
-            		}
-            		if(intval($updatecategory)>0){
-            			if($catid = $DB->get_field('course_categories', 'id', array('name'=>addslashes($group->category)))){
-            				if ($old_course->category != $catid && !empty($catid)) {
-            					$course->id=$old_course->id;
-            					$course->category=$catid;
-            					$this->log_line($coursecode.': Course category changed to '.$group->category);
-            				}
-            			}
-            		}
-            	
-            		if(intval($updatestartdate)>0){
-            			if ($old_course->startdate != $group->startdate && !empty($group->startdate)) {
-            				$course->id=$old_course->id;
-            				$course->startdate=$group->startdate;
-            				$this->log_line($coursecode.': Startdate updated to '.$group->startdate);
-            			}
+            		
+                    // clean out strange ASCII ISO-8859-1 values and format as UTF8
+                    if (!empty($course->summary)) {
+                    	$course->summary = format_text(iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $course->summary),FORMAT_HTML);
+                    }
+                    
+            		if ($old_course->startdate != $group->startdate && !empty($group->startdate)) {
+           				$course->id=$old_course->id;
+           				$course->startdate=$group->startdate;
+           				$this->log_line($coursecode.': Startdate updated to '.$group->startdate);
             		}
             		if (!empty($course->id)) {
             			//$this->log_line('Modified course object:');
@@ -734,14 +684,15 @@ function process_group_tag($tagcontents) {
             			}
             		}
             	}
+
             } // end of else update existing course - JKR
-            
+
         } // End of foreach(coursecode)
     }
-    
+
     // return to keep for snapshot unenroll - JKR
     return $group->coursecode;
-    
+
 } // End process_group_tag()
 
 /**
@@ -827,11 +778,10 @@ function process_person_tag($tagcontents){
 
 
     // Now if the recstatus is 3, we should delete the user if-and-only-if the setting for delete users is turned on
-    // In the "users" table we can do this by setting deleted=1
     if($recstatus==3){
 
         if($imsdeleteusers){ // If we're allowed to delete user records
-			// Do not dare to hack the user.deleted field directly in database!!!
+            // Do not dare to hack the user.deleted field directly in database!!!
             if ($user = $DB->get_record('user', array('username'=>$person->username, 'mnethostid'=>$CFG->mnet_localhost_id, 'deleted'=>0))) {
                 if (delete_user($user)) {
                     $this->log_line("Deleted user '$person->username' (ID number $person->idnumber).");
@@ -860,11 +810,15 @@ function process_person_tag($tagcontents){
 
             // If they don't exist and they have a defined username, and $createnewusers == true, we create them.
             $person->lang = $CFG->lang;
+            $auth = explode(',', $CFG->auth); //TODO: this needs more work due tu multiauth changes, use first auth for now
+            $auth = reset($auth);
+            $person->auth = $auth;
+            
             $person->auth = $defaultauthentication;
             
             //always set the local (manual) default password
             $person->password =  hash_internal_user_password($person->newpassword);
-                 
+
             $person->confirmed = 1;
             $person->timemodified = time();
             $person->mnethostid = $CFG->mnet_localhost_id;
@@ -1088,7 +1042,7 @@ function process_membership_tag($tagcontents){
                     $memberstoreobj->roleid=$moodleroleid;
 					$centralmembers[]=$memberstoreobj;
 					
-					$memberstally++;
+                    $memberstally++;
 
                     // At this point we can also ensure the group membership is recorded if present
                     if(isset($member->groupname)){
@@ -1110,12 +1064,14 @@ function process_membership_tag($tagcontents){
                                 $this->log_line('Added a new group for this course: '.$group->name);
                                 $groupids[$member->groupname] = $groupid; // Store ID in cache
                                 $member->groupid = $groupid;
+                                // Invalidate the course group data cache just in case.
+                                cache_helper::invalidate_by_definition('core', 'groupdata', array(), array($ship->courseid));
                             }
                         }
                         // Add the user-to-group association if it doesn't already exist
                         if($member->groupid) {
                             groups_add_member($member->groupid, $memberstoreobj->userid,
-                            	'enrol_imsenterprise', $einstance->id);
+                                    'enrol_imsenterprise', $einstance->id);
                         }
                     } // End of group-enrolment (from member.role.extension.cohort tag)
 
@@ -1149,168 +1105,6 @@ function process_membership_tag($tagcontents){
     
 } // End process_membership_tag()
 
-
-
-/**
- * Snapshot unenrol. Compares Moodle users with IMS Enterprise users
- * @param array $coursecodes of the courses created
- * @param array $central_member_list of the membership objects in IMS Enterprise spec
- */
-
-function snapshot_unenrol($coursecodes,$central_member_list) {
-	global $DB;
-	
-    $this->log_line('');  // for ease of reading - JKR
-	$this->log_line('--- snapshot_unenrol() started ---');
-	// $this->log_line( "coursecode parameter:\n" . print_r($coursecodes,true) );
-	// $this->log_line( "central_member_list parameter:\n" . print_r($central_member_list,true) );
-
-	//get all students in the moodle database
-	//not needed, already set as array() - JKR
-	//$coursecodes = isset($coursecodes) ? $coursecodes : array();
-	$central_userids=array();
-	
-
-	// Build the central_userids array before the course loop - APG
-	if (isset($central_member_list)) {
-		//build list of IMS users in this role in all current IMS course data
-		foreach ($central_member_list as $central_member_array) {
-			//make array of the members in central records by course
-			foreach ($central_member_array as $central_member_object) {
-				if (is_object($central_member_object)) {
-						$central_userids[$central_member_object->course][]=$central_member_object->userid;
-				}
-			}
-		}
-	} else {
-		$central_member_list=array();
-	}
-	
-	
-	// $coursecodes is an array of arrays, not an array of values as in v1.9
-	// this it to handle Course Aliasing, see process_group_tag() above - JKR
-	foreach($coursecodes as $courseidlist) {
-		$keep_informal=true;
-		
-		// NOTE: this only looks at the first course in this record (ie. $courseidlist[0] )
-		// if Course Aliasing, see process_group_tag() above, is ever implemented, we need to redo this - JKR
-		$courseidnumber = $courseidlist[0];
-		
-		$course = $DB->get_record('course',array('idnumber'=>$courseidnumber));
-		$this->log_line("IMS COURSE: " . $courseidnumber . "(id=" . $course->id . ")" );
-
-
-		$context = get_context_instance(CONTEXT_COURSE,$course->id);
-		//$this->log_line("Getting role records\n");
-		$roles=$DB->get_records('role');
-		
-		// Grab the enrolment group for imsenterprise so that we can ensure only IMS users are removed - APG
-		//$this->log_line("Getting enrolment_group records\n");
-		$enrolment_group = $DB->get_record('enrol', array('courseid'=>$course->id, 'enrol'=>'imsenterprise'));
-		if($enrolment_group) {
-
-			foreach ($roles as $role) {
-				//$role->name is invalid in >= 2.4, use role_get_name($role) - JKR
-				//$this->log_line("  ROLE: $role->id (" . role_get_name($role) . ")" );
-				
-				//get list of Moodle users in this role in  course
-				
-				// This now has a pre-check for the enrolment group that is imsenterprise so we no longer have to check for it later - APG
-				// In 2.4, cannot used mixed parameters, so last where clause is collapsed into single statement, with empty parameters - JKR 20130514
-			    if ($contextusers = get_role_users($role->id, $context, false, 'u.id,u.username,ra.roleid, ra.itemid',
-			        			'u.id', null,'', '', '', 'ra.itemid = ' . $enrolment_group->id, null)) {
-			        			 
-					//$this->log_line( "    MOODLE contextusers:\n" . print_r($contextusers,true));
-					
-					//show all IMS users in this role for the current class.
-					//$this->log_line( "    IMS central_userids:\n" . print_r($central_userids,true));
-					//loop through moodle users in this role and compare with IMS users
-					foreach ($contextusers as $moodle_user) {
-						//$this->log_line("    MOODLE CONTEXT SINGLE USER: $moodle_user->id ($moodle_user->username, Enrol=$moodle_user->itemid, Keep=$keep_informal)");
-						if (!isset($central_userids[$course->id]) or !in_array($moodle_user->id,$central_userids[$course->id])) {
-							$this->unenrol_user($enrolment_group, $moodle_user->id);
-							$this->log_line("User $moodle_user->username removed from role $role->id from course site $course->id because no longer has this role in central database.");
-						}
-					}  /* for each moodle/context user */
-				}  /* if contextusers */
-			}  /* for each role */
-		}  /* if enrolment_group exists */
-		else {
-			//$this->log_line("WARNING: enrolment_group 'imsenterprise' NOT found for this (probably new) course!");
-			//$this->warningCount++;
-		}
-	}  /* for each course */
-	
-	$this->log_line("--- snapshot_unenrol() finished ---");
-}
-
-
-
-/**
- * run through the mdl_TBIRD_COURSE_AUTOHIDE_TABLE table and find courses that need to be hidden
- * JKR 20091004 and later
- */
-function process_course_autohide() {
-	global $DB;
-
-	//get settings
-	$autohidecourse				= $this->get_config('autohidecourse');
-	$autohidecourselastrun		= $this->get_config('autohidecourselastrun');
-	$autohidecourseafterndays	= $this->get_config('autohidecourseafterndays');
-	$autohidecoursehourtorun	= $this->get_config('autohidecoursehourtorun');
-
-	//use a Moodle lib call to get current hour, with timezone and DST adjustments
-	$starthour = intval(userdate($this->starttime,"%H"));
-	$hourtorun = intval($autohidecoursehourtorun);
-    $this->log_line('');  // for ease of reading - JKR
-	$this->log_line("Checking if course auto-hide needs to run (run in hour $hourtorun, current hour $starthour):");
-	//$this->log_line("  Last ran at "  . date("r",intval($this->get_config('autohidecourselastrun'))) . "\n  Now = " . date("r",$starttime) . ", hour = $starthour");
-	//this complicated logic is mostly for debugging - JKR
-	if($hourtorun > 0) {
-		if($starthour == $hourtorun) {
-			//$this->log_line("  Hour OK.");
-			$this->log_line("Starttime: " . $this->starttime . "  Last run: " . intval($autohidecourselastrun));
-			if($this->starttime - intval($autohidecourselastrun) > (24 * 60 * 60)) {
-				$this->log_line("  YES: Running course auto-hide.");
-				$lastdatetohide = $this->starttime - (intval($autohidecourseafterndays) * 24 * 60 * 60);
-				$this->log_line("  Most recent end date to hide: " . date("r",$lastdatetohide) . " (" . $lastdatetohide . ")");
-				//find old courses not hidden yet
-				$select = "hiddendate = 0 and enddate < $lastdatetohide";
-				//$this->log_line("  SELECT query: " . $select);
-				$courseshidden = 0;
-				//this needs to be fixed!
-				if($rs = $DB->get_recordset_select(TBIRD_COURSE_AUTOHIDE_TABLE,$select)) {
-					//go hide these courses
-					foreach ($rs as $row) {
-						//while($row = $rs->FetchNextObj()) {
-						$this->log_line('  Hiding course ' . $row->courseid);
-						$DB->set_field('course', 'visible', '0', array('id'=>$row->courseid));
-						$row->hiddendate = $this->starttime;
-						if(!$DB->update_record(TBIRD_COURSE_AUTOHIDE_TABLE,$row)) {
-							$this->log_line('Error updating auto-hide table.');
-							$this->errorCount++;
-						} else {
-							$courseshidden++;
-						}
-					}
-				}
-				$this->log_line('  Courses hidden: ' . $courseshidden);
-				//update the last run value
-				$this->set_config('autohidecourselastrun', $this->starttime);
-			} else {
-				$this->log_line('  NO: Already ran in this hour.');
-			}
-		} else {
-			$this->log_line('  NO - wrong hour.');
-		}
-	} else {
-		$this->log_line('  NO - not enabled.');
-	}
-}
-
-// end of custom additions - JKR
-
-
 /**
 * Process the properties tag. The only data from this element
 * that is relevant is whether a <target> is specified.
@@ -1334,7 +1128,10 @@ function process_properties_tag($tagcontents){
 * @param string $string Text to write (newline will be added automatically)
 */
 function log_line($string){
-    mtrace($string);
+
+    if (!PHPUNIT_TEST) {
+        mtrace($string);
+    }
     if($this->logfp) {
         fwrite($this->logfp, $string . "\n");
     }
@@ -1375,34 +1172,153 @@ function load_role_mappings() {
     }
 }
 
-/**
- * Called whenever anybody tries (from the normal interface) to remove a group
- * member which is registered as being created by this component. (Not called
- * when deleting an entire group or course at once.)
- * @param int $itemid Item ID that was stored in the group_members entry
- * @param int $groupid Group ID
- * @param int $userid User ID being removed from group
- * @return bool True if the remove is permitted, false to give an error
- */
-function enrol_imsenterprise_allow_group_member_remove($itemid, $groupid, $userid) {
-	return false;
-}
+    /**
+     * Load the name mappings (from the config), so we can easily refer to
+     * how an IMS-E course properties corresponds to a Moodle course properties
+     */
+    function load_course_mappings() {
+        require_once('locallib.php');
 
-/**
- * Get the default category id (often known as 'Miscellaneous'),
- * statically cached to avoid multiple DB lookups on big imports.
- *
- * @return int id of default category.
- */
-private function get_default_category_id() {
-	static $defaultcategoryid = null;
+        $imsnames = new imsenterprise_courses();
+        $courseattrs = $imsnames->get_courseattrs();
 
-	if ($defaultcategoryid === null) {
-		$category = get_course_category();
-		$defaultcategoryid = $category->id;
-	}
+        $this->coursemappings = array();
+        foreach($courseattrs as $courseattr) {
+            $this->coursemappings[$courseattr] = $this->get_config('imscoursemap' . $courseattr);
+        }
+    }
 
-	return $defaultcategoryid;
-}
+    /**
+     * Called whenever anybody tries (from the normal interface) to remove a group
+     * member which is registered as being created by this component. (Not called
+     * when deleting an entire group or course at once.)
+     * @param int $itemid Item ID that was stored in the group_members entry
+     * @param int $groupid Group ID
+     * @param int $userid User ID being removed from group
+     * @return bool True if the remove is permitted, false to give an error
+     */
+    function enrol_imsenterprise_allow_group_member_remove($itemid, $groupid, $userid) {
+        return false;
+    }
 
+
+    /**
+     * Get the default category id (often known as 'Miscellaneous'),
+     * statically cached to avoid multiple DB lookups on big imports.
+     *
+     * @return int id of default category.
+     */
+    private function get_default_category_id() {
+        global $CFG;
+        require_once($CFG->libdir.'/coursecatlib.php');
+
+        static $defaultcategoryid = null;
+
+        if ($defaultcategoryid === null) {
+            $category = coursecat::get_default();
+            $defaultcategoryid = $category->id;
+        }
+
+        return $defaultcategoryid;
+    }
+
+// custom additions - JKR
+
+    /**
+     * Snapshot unenrol. Compares Moodle users with IMS Enterprise users
+     * @param array $coursecodes of the courses created
+     * @param array $central_member_list of the membership objects in IMS Enterprise spec
+     */
+    
+    function snapshot_unenrol($coursecodes,$central_member_list) {
+    	global $DB;
+    
+    	$this->log_line('');  // for ease of reading - JKR
+    	$this->log_line('--- snapshot_unenrol() started ---');
+    	// $this->log_line( "coursecode parameter:\n" . print_r($coursecodes,true) );
+    	// $this->log_line( "central_member_list parameter:\n" . print_r($central_member_list,true) );
+    
+    	//get all students in the moodle database
+    	//not needed, already set as array() - JKR
+    	//$coursecodes = isset($coursecodes) ? $coursecodes : array();
+    	$central_userids=array();
+    
+    
+    	// Build the central_userids array before the course loop - APG
+    	if (isset($central_member_list)) {
+    		//build list of IMS users in this role in all current IMS course data
+    		foreach ($central_member_list as $central_member_array) {
+    			//make array of the members in central records by course
+    			foreach ($central_member_array as $central_member_object) {
+    				if (is_object($central_member_object)) {
+    					$central_userids[$central_member_object->course][]=$central_member_object->userid;
+    				}
+    			}
+    		}
+    	} else {
+    		$central_member_list=array();
+    	}
+    
+    
+    	// $coursecodes is an array of arrays, not an array of values as in v1.9
+    	// this it to handle Course Aliasing, see process_group_tag() above - JKR
+    	foreach($coursecodes as $courseidlist) {
+    		$keep_informal=true;
+    
+    		// NOTE: this only looks at the first course in this record (ie. $courseidlist[0] )
+    		// if Course Aliasing, see process_group_tag() above, is ever implemented, we need to redo this - JKR
+    		$courseidnumber = $courseidlist[0];
+    
+    		$course = $DB->get_record('course',array('idnumber'=>$courseidnumber));
+    		$this->log_line("IMS COURSE: " . $courseidnumber . "(id=" . $course->id . ")" );
+    
+    
+    		$context = get_context_instance(CONTEXT_COURSE,$course->id);
+    		//$this->log_line("Getting role records\n");
+    		$roles=$DB->get_records('role');
+    
+    		// Grab the enrolment group for imsenterprise so that we can ensure only IMS users are removed - APG
+    		//$this->log_line("Getting enrolment_group records\n");
+    		$enrolment_group = $DB->get_record('enrol', array('courseid'=>$course->id, 'enrol'=>'imsenterprise'));
+    		if($enrolment_group) {
+    
+    			foreach ($roles as $role) {
+    				//$role->name is invalid in >= 2.4, use role_get_name($role) - JKR
+    				//$this->log_line("  ROLE: $role->id (" . role_get_name($role) . ")" );
+    
+    				//get list of Moodle users in this role in  course
+    
+    				// This now has a pre-check for the enrolment group that is imsenterprise so we no longer have to check for it later - APG
+    				// In 2.4, cannot used mixed parameters, so last where clause is collapsed into single statement, with empty parameters - JKR 20130514
+    				if ($contextusers = get_role_users($role->id, $context, false, 'u.id,u.username,ra.roleid, ra.itemid',
+    						'u.id', null,'', '', '', 'ra.itemid = ' . $enrolment_group->id, null)) {
+    						 
+    						//$this->log_line( "    MOODLE contextusers:\n" . print_r($contextusers,true));
+    					
+    				//show all IMS users in this role for the current class.
+    				//$this->log_line( "    IMS central_userids:\n" . print_r($central_userids,true));
+    				//loop through moodle users in this role and compare with IMS users
+    				foreach ($contextusers as $moodle_user) {
+    					//$this->log_line("    MOODLE CONTEXT SINGLE USER: $moodle_user->id ($moodle_user->username, Enrol=$moodle_user->itemid, Keep=$keep_informal)");
+    					if (!isset($central_userids[$course->id]) or !in_array($moodle_user->id,$central_userids[$course->id])) {
+    						$this->unenrol_user($enrolment_group, $moodle_user->id);
+    						$this->log_line("User $moodle_user->username removed from role $role->id from course site $course->id because no longer has this role in central database.");
+    					}
+    				}  /* for each moodle/context user */
+    				}  /* if contextusers */
+    			}  /* for each role */
+    		}  /* if enrolment_group exists */
+    		else {
+    			//$this->log_line("WARNING: enrolment_group 'imsenterprise' NOT found for this (probably new) course!");
+    			//$this->warningCount++;
+    		}
+    	}  /* for each course */
+    
+    	$this->log_line("--- snapshot_unenrol() finished ---");
+    }
+    
+    // end of custom additions - JKR
+    
 } // end of class
+
+

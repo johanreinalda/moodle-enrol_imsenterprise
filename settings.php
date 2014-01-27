@@ -18,8 +18,7 @@
 /**
  * IMS Enterprise enrolments plugin settings and presets.
  *
- * @package    enrol
- * @subpackage imsenterprise
+ * @package    enrol_imsenterprise
  * @copyright  2010 Eugene Venter
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -106,40 +105,30 @@ if ($ADMIN->fulltree) {
  */
     
     $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/snapshotunenrol', get_string('snapshotunenrol', 'enrol_imsenterprise'), get_string('snapshotunenrol_desc', 'enrol_imsenterprise'), 0));
-    
-    $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/useshortname', get_string('useshortname', 'enrol_imsenterprise'), get_string('useshortname_desc', 'enrol_imsenterprise'), 0));
-    
+
     $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/updatevisibility', get_string('updatevisibility', 'enrol_imsenterprise'), get_string('updatevisibility_desc', 'enrol_imsenterprise'), 0));
-    
-    $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/updateshortname', get_string('updateshortname', 'enrol_imsenterprise'), get_string('updateshortname_desc', 'enrol_imsenterprise'), 0));
-    
-    $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/updatefullname', get_string('updatefullname', 'enrol_imsenterprise'), get_string('updatefullname_desc', 'enrol_imsenterprise'), 0));
-    
-    $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/updatesummary', get_string('updatesummary', 'enrol_imsenterprise'), get_string('updatesummary_desc', 'enrol_imsenterprise'), 0));
-    
-    $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/updatecategory', get_string('updatecategory', 'enrol_imsenterprise'), get_string('updatecategory_desc', 'enrol_imsenterprise'), 0));
-    
-    $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/updatestartdate', get_string('updatestartdate', 'enrol_imsenterprise'), get_string('updatestartdate_desc', 'enrol_imsenterprise'), 0));
-    
+
     $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/coursenotenrollable', get_string('coursenotenrollable', 'enrol_imsenterprise'), get_string('coursenotenrollable_desc', 'enrol_imsenterprise'), 0));
     
     $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/categoryvisible', get_string('categoryvisible', 'enrol_imsenterprise'), get_string('categoryvisible_desc', 'enrol_imsenterprise'), 0));
     
-    $settings->add(new admin_setting_configcheckbox('enrol_imsenterprise/autohidecourse', get_string('autohidecourse', 'enrol_imsenterprise'), get_string('autohidecourse_desc', 'enrol_imsenterprise'), 0));
-    
-    $settings->add(new admin_setting_configtext('enrol_imsenterprise/autohidecourseafterndays', get_string('autohidecourseafterndays', 'enrol_imsenterprise'), get_string('autohidecourseafterndays_desc', 'enrol_imsenterprise'), 0, PARAM_INT, 3));
-    
-    $settings->add(new admin_setting_configtext('enrol_imsenterprise/autohidecoursehourtorun', get_string('autohidecoursehourtorun', 'enrol_imsenterprise'), get_string('autohidecoursehourtorun_desc', 'enrol_imsenterprise'), 0, PARAM_INT, 2));
-    
-    //this needs to be a read-only field in this form.
-    $settings->add(new admin_setting_configtext('enrol_imsenterprise/autohidecourselastrun', get_string('autohidecourselastrun', 'enrol_imsenterprise'), get_string('autohidecourselastrun_desc', 'enrol_imsenterprise'), 'Never'));
-    
-    
-    
 /**
  * end of custom additions
  */
+
+    if (!during_initial_install()) {
+    	$imscourses = new imsenterprise_courses();
+    	foreach ($imscourses->get_courseattrs() as $courseattr) {
     
+    		// The assignable values of this course attribute
+    		$assignablevalues = $imscourses->get_imsnames($courseattr);
+    		$name = get_string('setting' . $courseattr, 'enrol_imsenterprise');
+    		$description = get_string('setting' . $courseattr . 'description', 'enrol_imsenterprise');
+    		$defaultvalue = (string) $imscourses->determine_default_coursemapping($courseattr);
+    		$settings->add(new admin_setting_configselect('enrol_imsenterprise/imscoursemap' . $courseattr, $name, $description, $defaultvalue, $assignablevalues));
+    	}
+    }
+
     //--- miscellaneous -------------------------------------------------------------------------------------
     $settings->add(new admin_setting_heading('enrol_imsenterprise_miscsettings', get_string('miscsettings', 'enrol_imsenterprise'), ''));
 

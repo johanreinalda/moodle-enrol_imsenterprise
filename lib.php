@@ -47,59 +47,59 @@ if (!defined("TBIRD_COURSE_INFO_TABLE")) { define("TBIRD_COURSE_INFO_TABLE", 'tb
  */
 class enrol_imsenterprise_plugin extends enrol_plugin {
 
-	// new variables needed - JKR
-	protected $errorCount = 0; // should really be in constructor - JKR
-	protected $warningCount = 0;
+    // new variables needed - JKR.
+    protected $errorCount = 0; // should really be in constructor - JKR
+    protected $warningCount = 0;
 
     /**
-	 * @var $logfp resource file pointer for writing log data to.
-	 */
-	protected $logfp;
+     * @var $logfp resource file pointer for writing log data to.
+     */
+    protected $logfp;
 
-	/**
-	 * @var $continueprocessing bool flag to determine if processing should continue.
-	 */
-	protected $continueprocessing;
+    /**
+     * @var $continueprocessing bool flag to determine if processing should continue.
+     */
+    protected $continueprocessing;
 
-	/**
-	 * @var $xmlcache string cache of xml lines.
-	 */
-	protected $xmlcache;
+    /**
+     * @var $xmlcache string cache of xml lines.
+     */
+    protected $xmlcache;
 
     /**
      * @var $coursemappings array of mappings between IMS data fields and moodle course fields.
      */
     protected $coursemappings;
-    
+
     /**
      * @var $rolemappings array of mappings between IMS roles and moodle roles.
      */
     protected $rolemappings;
 
     /**
-    * Read in an IMS Enterprise file.
-    * Originally designed to handle v1.1 files but should be able to handle
-    * earlier types as well, I believe.
-    *
-    */
+     * Read in an IMS Enterprise file.
+     * Originally designed to handle v1.1 files but should be able to handle
+     * earlier types as well, I believe.
+     *
+     */
     public function cron() {
         global $CFG;
-    
-        // Get configs
+
+        // Get configs.
         $imsfilelocation = $this->get_config('imsfilelocation');
         $logtolocation = $this->get_config('logtolocation');
         $mailadmins = $this->get_config('mailadmins');
         $prevtime = $this->get_config('prev_time');
         $prevmd5 = $this->get_config('prev_md5');
         $prevpath = $this->get_config('prev_path');
-    	$snapshotunenrol = $this->get_config('snapshotunenrol');
+        $snapshotunenrol = $this->get_config('snapshotunenrol');
     
-    	// track courses for snapshot unenrol - JKR
-    	$coursecodes = Array();
-    	$central_member_list = Array();
+        // track courses for snapshot unenrol - JKR.
+        $coursecodes = Array();
+        $central_member_list = Array();
     	
         if (empty($imsfilelocation)) {
-            $filename = "$CFG->dataroot/1/imsenterprise-enrol.xml";  // Default location
+            $filename = "$CFG->dataroot/1/imsenterprise-enrol.xml";  // Default location.
         } else {
             $filename = $imsfilelocation;
         }
@@ -111,7 +111,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
 
         $fileisnew = false;
         if ( file_exists($filename) ) {
-            @set_time_limit(0);
+            core_php_time_limit::raise();
             $starttime = time();
 
             $this->log_line('----------------------------------------------------------------------');
@@ -119,16 +119,16 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             $this->log_line('Found file '.$filename);
             $this->xmlcache = '';
 
-            // Make sure we understand how to map the IMS-E roles to Moodle roles
+            // Make sure we understand how to map the IMS-E roles to Moodle roles.
             $this->load_role_mappings();
             // Make sure we understand how to map the IMS-E course names to Moodle course names.
             $this->load_course_mappings();
 
-            $md5 = md5_file($filename); // NB We'll write this value back to the database at the end of the cron
+            $md5 = md5_file($filename); // NB We'll write this value back to the database at the end of the cron.
             $filemtime = filemtime($filename);
-    
+
             // Decide if we want to process the file (based on filepath, modification time, and MD5 hash)
-            // This is so we avoid wasting the server's efforts processing a file unnecessarily
+            // This is so we avoid wasting the server's efforts processing a file unnecessarily.
             if (empty($prevpath)  || ($filename != $prevpath)) {
                 $fileisnew = true;
             } else if (isset($prevtime) && ($filemtime <= $prevtime)) {
@@ -143,57 +143,57 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
 
                 // The <properties> tag is allowed to halt processing if we're demanding a matching target.
                 $this->continueprocessing = true;
-                $line = 0;
 
                 // Run through the file and process the group/person entries.
                 if (($fh = fopen($filename, "r")) != false) {
-                    
-    				$this->log_line('Processing file...');
+
+                    $this->log_line('Processing file...');
+                    $line = 0;
                     while ((!feof($fh)) && $this->continueprocessing) {
-    
+
                         $line++;
                         $curline = fgets($fh);
                         $this->xmlcache .= $curline; // Add a line onto the XML cache.
-    
+
                         while (true) {
-                          // If we've got a full tag (i.e. the most recent line has closed the tag) then process-it-and-forget-it.
-                          // Must always make sure to remove tags from cache so they don't clog up our memory
-                          if ($tagcontents = $this->full_tag_found_in_cache('group', $curline)) {
-                              $coursecodes[] = $this->process_group_tag($tagcontents);
-                              $this->remove_tag_from_cache('group');
-                          } else if ($tagcontents = $this->full_tag_found_in_cache('person', $curline)) {
-                              $this->process_person_tag($tagcontents);
-                              $this->remove_tag_from_cache('person');
-                          } else if ($tagcontents = $this->full_tag_found_in_cache('membership', $curline)) {
-                              $central_member_list[] = $this->process_membership_tag($tagcontents);
-                              $this->remove_tag_from_cache('membership');
-                          } else if ($tagcontents = $this->full_tag_found_in_cache('comments', $curline)) {
-                              $this->remove_tag_from_cache('comments');
-                          } else if ($tagcontents = $this->full_tag_found_in_cache('properties', $curline)) {
-                              $this->process_properties_tag($tagcontents);
-                              $this->remove_tag_from_cache('properties');
-                          } else {
-                              break;
-                          }
-                        } // End of while-tags-are-detected
-                    } // end of while loop
+                            // If we've got a full tag (i.e. the most recent line has closed the tag) then process-it-and-forget-it.
+                            // Must always make sure to remove tags from cache so they don't clog up our memory.
+                            if ($tagcontents = $this->full_tag_found_in_cache('group', $curline)) {
+                                $coursecodes[] = $this->process_group_tag($tagcontents);
+                                $this->remove_tag_from_cache('group');
+                            } else if ($tagcontents = $this->full_tag_found_in_cache('person', $curline)) {
+                                $this->process_person_tag($tagcontents);
+                                $this->remove_tag_from_cache('person');
+                            } else if ($tagcontents = $this->full_tag_found_in_cache('membership', $curline)) {
+                                $central_member_list[] = $this->process_membership_tag($tagcontents);
+                                $this->remove_tag_from_cache('membership');
+                            } else if ($tagcontents = $this->full_tag_found_in_cache('comments', $curline)) {
+                                $this->remove_tag_from_cache('comments');
+                            } else if ($tagcontents = $this->full_tag_found_in_cache('properties', $curline)) {
+                                $this->process_properties_tag($tagcontents);
+                                $this->remove_tag_from_cache('properties');
+                            } else {
+                                break;
+                            }
+                        }
+                    }
                     if ($snapshotunenrol){
-    					$this->snapshot_unenrol($coursecodes,$central_member_list);
-    				}
-    				fclose($fh);
+                        $this->snapshot_unenrol($coursecodes,$central_member_list);
+                    }
+                    fclose($fh);
                     fix_course_sortorder();
-                } // end of if(file_open) for first pass
-    			else {
-    				//fopen() failed
-    				$this->errorCount++;
-    				$this->log_line('Cannot open file!');
+                }
+                else {
+    				//fopen() failed.
+                    $this->errorCount++;
+                    $this->log_line('Cannot open file!');
     			}
 
-        		$this->log_line('');  // for ease of reading - JKR
+        		$this->log_line('');  // for ease of reading - JKR.
                 $timeelapsed = time() - $starttime;
                 $this->log_line('Process has completed. Time taken: '.$timeelapsed.' seconds, ' . $line . ' lines');
 
-            } // END of "if file is new"
+            }
 
             // These variables are stored so we can compare them against the IMS file, next time round.
             $this->set_config('prev_time', $filemtime);
@@ -203,7 +203,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
         } else {
             $this->log_line('File not found: '.$filename);
         }
-    
+
         if (!empty($mailadmins) && $fileisnew) {
             $timeelapsed = isset($timeelapsed) ? $timeelapsed : 0;
             $msg = "An IMS enrolment has been carried out within Moodle.\nTime taken: $timeelapsed seconds.\n\n";
@@ -220,7 +220,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             } else {
                 $msg .= "Logging is currently not active.";
             }
-    
+
             $eventdata = new stdClass();
             $eventdata->modulename        = 'moodle';
             $eventdata->component         = 'enrol_imsenterprise';
@@ -233,23 +233,23 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             $eventdata->fullmessagehtml   = '';
             $eventdata->smallmessage      = '';
             message_send($eventdata);
-    
+
             $this->log_line('Notification email sent to administrator.');
-    
+
         }
-    
-        // show global error count - JKR
-        $this->log_line('');  // for ease of reading - JKR
+
+        // show global error count - JKR.
+        $this->log_line('');  // for ease of reading - JKR.
         $this->log_line("Warnings found: $this->warningCount");
         $this->log_line("Errors found: $this->errorCount");
         $this->log_line("IMS Enterprise enrol cron process finished at " . userdate(time()));
         $this->log_line('----------------------------------------------------------------------');
         
         if ($this->logfp) {
-          fclose($this->logfp);
+            fclose($this->logfp);
         }
 
-	}
+    }
 
     /**
      * Check if a complete tag is found in the cached data, which usually happens
@@ -258,8 +258,8 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
      * @param string $tagname Name of tag to look for
      * @param string $latestline The very last line in the cache (used for speeding up the match)
      * @return bool|string false, or the contents of the tag (including start and end).
-	 */
-    protected function full_tag_found_in_cache($tagname, $latestline) { // Return entire element if found. Otherwise return false.
+     */
+    protected function full_tag_found_in_cache($tagname, $latestline) {
         // Return entire element if found. Otherwise return false.
         if (strpos(strtolower($latestline), '</'.strtolower($tagname).'>') === false) {
             return false;
@@ -269,13 +269,13 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             return false;
         }
     }
-    
+
     /**
-    * Remove complete tag from the cached data (including all its contents) - so
-    * that the cache doesn't grow to unmanageable size
-	*
-    * @param string $tagname Name of tag to look for
-    */
+     * Remove complete tag from the cached data (including all its contents) - so
+     * that the cache doesn't grow to unmanageable size
+     *
+     * @param string $tagname Name of tag to look for
+     */
     protected function remove_tag_from_cache($tagname) {
         // Trim the cache so we're not in danger of running out of memory.
         // "1" so that we replace only the FIRST instance.
@@ -283,13 +283,13 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
     }
 
     /**
-    * Very simple convenience function to return the "recstatus" found in person/group/role tags.
-    * 1=Add, 2=Update, 3=Delete, as specified by IMS, and we also use 0 to indicate "unspecified".
-    *
-    * @param string $tagdata the tag XML data
-    * @param string $tagname the name of the tag we're interested in
-    * @return int recstatus value
-    */
+     * Very simple convenience function to return the "recstatus" found in person/group/role tags.
+     * 1=Add, 2=Update, 3=Delete, as specified by IMS, and we also use 0 to indicate "unspecified".
+     *
+     * @param string $tagdata the tag XML data
+     * @param string $tagname the name of the tag we're interested in
+     * @return int recstatus value
+     */
     protected static function get_recstatus($tagdata, $tagname) {
         if (preg_match('{<'.$tagname.'\b[^>]*recstatus\s*=\s*["\'](\d)["\']}is', $tagdata, $matches)) {
             return intval($matches[1]);
@@ -299,27 +299,27 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
     }
 
     /**
-    * Process the group tag. This defines a Moodle course.
-	*
-    * @param string $tagcontents The raw contents of the XML element
-    */
+     * Process the group tag. This defines a Moodle course.
+     *
+     * @param string $tagcontents The raw contents of the XML element
+     */
     protected function process_group_tag($tagcontents) {
         global $DB;
-    
-        $this->log_line('');  // for ease of reading - JKR
-        
+
+        $this->log_line('');  // for ease of reading - JKR.
+
         // Get configs.
         $truncatecoursecodes    = $this->get_config('truncatecoursecodes');
         $createnewcourses       = $this->get_config('createnewcourses');
         $createnewcategories    = $this->get_config('createnewcategories');
-    
+
         // custom settings added - JKR
         $updatevisibility		= $this->get_config('updatevisibility');
         $coursenotenrollable	= $this->get_config('coursenotenrollable');
         $categoryvisible		= $this->get_config('categoryvisible');
-        // end of custom settings
+        // end of custom settings.
 
-        // Process tag contents
+        // Process tag contents.
         $group = new stdClass();
         if (preg_match('{<sourcedid>.*?<id>(.+?)</id>.*?</sourcedid>}is', $tagcontents, $matches)) {
             $group->coursecode = trim($matches[1]);
@@ -341,7 +341,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
 
         $recstatus = ($this->get_recstatus($tagcontents, 'group'));
 
-        // check start date of course - JKR
+        // check start date of course - JKR.
         if (preg_match('{<timeframe>.*?<begin>(.*?)</begin>.*?</timeframe>}is', $tagcontents, $matches)) {
         	//see if there is actual data here:
         	if (strlen($matches[1]) > 0) {
@@ -350,7 +350,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
         } else {
         	$group->startdate = '';
         }
-        //also get end date - JKR
+        // also get end date - JKR.
         if (preg_match('{<timeframe>.*?<end>(.*?)</end>.*?</timeframe>}is', $tagcontents, $matches)) {
         	//see if there is actual data here:
         	if (strlen($matches[1]) > 0) {
@@ -359,22 +359,22 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
         } else {
         	$group->enddate = '';
         }
-        //see if course should be visible or not - JKR
+        // see if course should be visible or not - JKR.
         if (preg_match('{<extension>.*?<visible>(.*?)</visible>.*?</extension>}is', $tagcontents, $matches)) {
         	$group->visible =  trim($matches[1]);
         } else {
         	$group->visible = '';
         }
-        //meeting-info is a tag added to contain course meeting date and time information
-        //it is stored in a separate table, enrol_imsenterprise_meeting_info,
-        //with zero or one row per courseid - JKR
+        // meeting-info is a tag added to contain course meeting date and time information
+        // it is stored in a separate table, enrol_imsenterprise_meeting_info,
+        // with zero or one row per courseid - JKR.
         if (preg_match('{<extension>.*?<meeting-info>(.*?)</meeting-info>.*?</extension>}is', $tagcontents, $matches)) {
         	$group->meeting_info = trim($matches[1]);
         	$this->log_line('Course ' . $group->coursecode . ' meeting info: ' . $group->meeting_info);
         } else {
         	$group->meeting_info = '';
         }
-        // end custom code - JKR
+        // end custom code - JKR.
 
         if (empty($group->coursecode)) {
             $this->log_line('Error at line '.$line.': Unable to find course code in \'group\' element.');
@@ -383,8 +383,8 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             // First, truncate the course code if desired.
             if (intval($truncatecoursecodes) > 0) {
                 $group->coursecode = ($truncatecoursecodes > 0)
-                         ? substr($group->coursecode, 0, intval($truncatecoursecodes))
-                         : $group->coursecode;
+                    ? substr($group->coursecode, 0, intval($truncatecoursecodes))
+                    : $group->coursecode;
             }
 
             // For compatibility with the (currently inactive) course aliasing, we need this to be an array.
@@ -396,12 +396,12 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 if (!$DB->get_field('course', 'id', array('idnumber' => $coursecode))) {
                     if (!$createnewcourses) {
                         $this->log_line("Course $coursecode not found in Moodle's course idnumbers, and not creating new course!");
-                        $this->errorCount++; // shown at end - JKR
+                        $this->errorCount++; // shown at end - JKR.
                     } else {
 
                         // Create the (hidden) course(s) if not found
                         $courseconfig = get_config('moodlecourse'); // Load Moodle Course shell defaults.
-    
+
                         // New course.
                         $course = new stdClass();
                         foreach ($this->coursemappings as $courseattr => $imsname) {
@@ -417,12 +417,12 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                                 $course->{$courseattr} = $group->{$imsname};
                             } else {
                                 $this->log_line('No ' . $imsname . ' description tag found for '
-                                        .$coursecode . ' coursecode, using ' . $coursecode . ' instead');
+                                    .$coursecode . ' coursecode, using ' . $coursecode . ' instead');
                                 $course->{$courseattr} = $coursecode;
                             }
                         }
 
-                        // clean out strange ASCII ISO-8859-1 values and format as UTF8
+                        // Clean out strange ASCII ISO-8859-1 values and format as UTF8.
                         if (!empty($course->summary)) {
                             $course->summary = format_text(iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $course->summary),FORMAT_HTML);
                         }
@@ -438,7 +438,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                         $course->groupmodeforce = $courseconfig->groupmodeforce;
                         $course->enablecompletion = $courseconfig->enablecompletion;
                         // Insert default names for teachers/students, from the current language.
-    
+
                         // Handle course categorisation (taken from the group.org.orgunit field if present).
                         if (!empty($group->category)) {
                             // If the category is defined and exists in Moodle, we want to store it in that one.
@@ -450,7 +450,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                                 $newcat->name = $group->category;
                                 $newcat->visible = 0;
 
-                                //if 'category visible' flag set, mark as such - JKR
+                                // If 'category visible' flag set, mark as such - JKR
                                 if (intval($categoryvisible)>0) {
                                 	$newcat->visible = 1;
                                 }
@@ -467,42 +467,24 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                             } else {
                                 // If not found and not allowed to create, stick with default.
                                 $this->log_line('Category '.$group->category.' not found in Moodle database, so using '.
-                                        'default category instead.');
+                                    'default category instead.');
                                 $course->category = $this->get_default_category_id();
                             }
                         } else {
                             $course->category = $this->get_default_category_id();
                         }
-                        $course->timecreated = time();
                         $course->startdate = time();
                         // Choose a sort order that puts us at the start of the list!
                         $course->sortorder = 0;
     
-                        //if 'not enrollable' flag set, mark as such - JKR
+                        // If 'not enrollable' flag set, mark as such - JKR.
                         if (intval($coursenotenrollable)>0) {
                         	$course->enrollable = 0;
                         }
-                        
-                		//$this->log_line('New course object:');
-                		//$this->log_line( print_r($course,true) );
-                        $courseid = $DB->insert_record('course', $course);
 
-                        // Setup default enrolment plugins.
-                        $course->id = $courseid;
-                        enrol_course_updated(true, $course, null);
+                        $course = create_course($course);
 
-                        // Setup the blocks.
-                        $course = $DB->get_record('course', array('id' => $courseid));
-                        blocks_add_default_course_blocks($course);
-
-                        // Create default 0-section.
-                        course_create_sections_if_missing($course, 0);
-
-                        add_to_log(SITEID, "course", "new", "view.php?id=$course->id", "$course->fullname (ID $course->id)");
-
-                        $this->log_line("Created course $coursecode in Moodle (Moodle ID is $course->id)");
-
-                        //now we need to store the end date, if set - JKR
+                        // Now we need to store the end date, if set - JKR.
                         if ( $group->enddate <> '' and is_int($group->enddate)) {
                         	$autohide = new stdClass;
                         	$autohide->courseid = $course->id;
@@ -516,9 +498,9 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                         	}
                         }
                         	
-                        //save the meeting information, if set - JKR
+                        // Save the meeting information, if set - JKR.
                         if ($group->meeting_info <> '') {
-                        	//new course, so add meeting info to table
+                        	// New course, so add meeting info to table.
                         	$courseinfo = new stdClass;
                         	$courseinfo->courseid = $course->id;
                         	$courseinfo->name = 'meeting-info';
@@ -534,20 +516,20 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                         
                     }
                 } else if ($recstatus == 3 && ($courseid = $DB->get_field('course', 'id', array('idnumber' => $coursecode)))) {
-                    // If course does exist, but recstatus==3 (delete), then set the course as hidden
+                    // If course does exist, but recstatus==3 (delete), then set the course as hidden.
                     $DB->set_field('course', 'visible', '0', array('id' => $courseid));
                 }
-                // else we should modify an existing course - JKR
+                // Else we should modify an existing course - JKR.
                 else {
                 	if ($old_course=$DB->get_record('course',array('idnumber'=>$coursecode))) {
                 		$this->log_line("Modifying existing course id=" . $old_course->id );
                 		$course = new stdClass();
                 		
                 		if (intval($updatevisibility)>0) {
-                			// if we don't get a visible tag from XML,
+                			// If we don't get a visible tag from XML,
                 			// we do NOT want to modify the course visibility
                 			// this is indicated by group->visible = "", see around line 508 for the tag parsing
-                			// JKR 20090213
+                			// JKR 20090213.
                 			if ($group->visible <> '') {
                 				if ($old_course->visible != $group->visible && isset($group->visible)) {
                 					$course->id=$old_course->id;
@@ -581,7 +563,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 			}
                 		}
 
-                        // clean out strange ASCII ISO-8859-1 values and format as UTF8
+                        // Clean out strange ASCII ISO-8859-1 values and format as UTF8.
                         if (!empty($course->summary)) {
                         	$course->summary = format_text(iconv('ISO-8859-1', 'UTF-8//TRANSLIT//IGNORE', $course->summary),FORMAT_HTML);
                         }
@@ -596,11 +578,11 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 			//$this->log_line( print_r($course,true) );
                 			$DB->update_record('course', $course);
                 		}
-                		//now we need to update the end date, if set - JKR
+                		// Now we need to update the end date, if set - JKR.
                 		if ( $group->enddate <> '' and is_int($group->enddate)) {
                 			$autohide = new stdClass;
-                			//we cannot use $course->id
-                			//as this is not set if there were no changes to course
+                			// We cannot use $course->id
+                			// as this is not set if there were no changes to course.
                 			$autohide->courseid = $old_course->id;
                 			$autohide->enddate = $group->enddate;
                 			//$this->log_line("Auto-hide record: " . print_r($autohide,true));
@@ -614,9 +596,9 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 				$this->log_line($coursecode.': Enddate set to '.$group->enddate);
                 			}
                 		}
-                		//update or save the meeting info here - JKR 20100524
+                		// Update or save the meeting info here - JKR 20100524.
                 		if ($group->meeting_info <> '') {
-                			//update record if exists
+                			// Update record if exists.
                 			$courseinfo = new stdClass;
                 			$infoselect = array('courseid'=>$old_course->id,'name'=>'meeting-info');
                 			if ($oldcourseinfo = $DB->get_record(TBIRD_COURSE_INFO_TABLE,$infoselect)) {
@@ -628,7 +610,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 				$this->log_line("Meeting info updated.");
 
                 			} else {
-                				//else add this information
+                				// Else add this information.
                 				$courseinfo->courseid = $old_course->id;
                 				$courseinfo->name = 'meeting-info';
                 				$courseinfo->value = $group->meeting_info;
@@ -641,22 +623,22 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 			}
 						}
 					}
-				} // end of else update existing course - JKR
-			} // End of foreach(coursecode)
+				} // End of else update existing course - JKR.
+			} // End of foreach(coursecode).
         }
     
-        // return to keep for snapshot unenroll - JKR
+        // Return to keep for snapshot unenroll - JKR.
         return $group->coursecode;
     }
-    
+
     /**
-    * Process the person tag. This defines a Moodle user.
-	*
-    * @param string $tagcontents The raw contents of the XML element
-    */
+     * Process the person tag. This defines a Moodle user.
+     *
+     * @param string $tagcontents The raw contents of the XML element
+     */
     protected function process_person_tag($tagcontents) {
         global $CFG, $DB;
-    
+
         $this->log_line('');  // for ease of reading - JKR
 
         // Get plugin configs.
@@ -665,8 +647,8 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
         $fixcasepersonalnames   = $this->get_config('fixcasepersonalnames');
         $imsdeleteusers         = $this->get_config('imsdeleteusers');
         $createnewusers         = $this->get_config('createnewusers');
-    
-        // custom settings added - JKR
+
+        // Custom settings added - JKR.
         $defaultauthentication  = $this->get_config('defaultauthentication');
         $defaultmanualpassword	= $this->get_config('defaultmanualpassword');
         $forcepasswordchange    = $this->get_config('forcepasswordchange');
@@ -687,8 +669,8 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             $person->username = trim($matches[1]);
         }
         if ($imssourcedidfallback && trim($person->username) == '') {
-          // This is the point where we can fall back to useing the "sourcedid" if "userid" is not supplied
-          // NB We don't use an "elseif" because the tag may be supplied-but-empty.
+            // This is the point where we can fall back to useing the "sourcedid" if "userid" is not supplied
+            // NB We don't use an "elseif" because the tag may be supplied-but-empty.
             $person->username = $person->idnumber;
         }
         if (preg_match('{<email>(.*?)</email>}is', $tagcontents, $matches)) {
@@ -704,13 +686,13 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             $person->country = trim($matches[1]);
         }
 
-        //optional extension for initial password - JKR
-        //only used for 'manual' accounts (see below near line 825)
+        // optional extension for initial password - JKR.
+        // Only used for 'manual' accounts (see below near line 825).
         if (preg_match('{<extension>.*?<password>(.*?)</password>.*?</extension>}is', $tagcontents, $matches)) {
         	$person->newpassword =  trim($matches[1]);
         	$this->log_line("Setting manual default password from XML file");
         } else {
-        	//use global default password
+        	// Use global default password.
         	// $this->log_line("Setting manual default password to default: '" . $CFG->enrol_defaultmanualpassword . "'");
         	$person->newpassword = $defaultmanualpassword;
         }
@@ -751,13 +733,13 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             }
 
         } else { // Add or update record.
-    
+
             // If the user exists (matching sourcedid) then we don't need to do anything.
             if (!$DB->get_field('user', 'id', array('idnumber' => $person->idnumber)) && $createnewusers) {
                 // If they don't exist and haven't a defined username, we log this as a potential problem.
                 if ((!isset($person->username)) || (strlen($person->username) == 0)) {
                     $this->log_line("Cannot create new user for ID # $person->idnumber".
-                            " - no username listed in IMS data for this person.");
+                        "- no username listed in IMS data for this person.");
                     $this->errorCount++;
                 } else if ($DB->get_field('user', 'id', array('username' => $person->username))) {
                     // If their idnumber is not registered but their user ID is, then add their idnumber to their record.
@@ -766,14 +748,13 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
 
                     // If they don't exist and they have a defined username, and $createnewusers == true, we create them.
                     $person->lang = $CFG->lang;
-                    //TODO: MDL_15863 this needs more work due to multiauth changes, use first auth for now.
-                    $auth = explode(',', $CFG->auth); 
+                    // TODO: MDL-15863 this needs more work due to multiauth changes, use first auth for now.
+                    $auth = explode(',', $CFG->auth);
                     $auth = reset($auth);
                     $person->auth = $auth;
-                    
+
                     $person->auth = $defaultauthentication;
-                    
-                    //always set the local (manual) default password
+                    // Always set the local (manual) default password.
                     $person->password =  hash_internal_user_password($person->newpassword);
         
                     $person->confirmed = 1;
@@ -781,18 +762,18 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                     $person->mnethostid = $CFG->mnet_localhost_id;
                     $id = $DB->insert_record('user', $person);
                     $this->log_line("Created user record ('.$id.') for user '$person->username' (ID number $person->idnumber).");
-                    
+
                     if ($forcepasswordchange and 'manual' == $person->auth) {
                         set_user_preference('auth_forcepasswordchange', '1', $id);
                     }
                 }
             } else if ($createnewusers) {
                 $this->log_line("User record already exists for user '$person->username' (ID number $person->idnumber).");
-                
-                //we are going to update their person data - JKR
+
+                // We are going to update their person data - JKR.
                 $msg=false;
                 $orig_person=$DB->get_record('user',array('idnumber'=>$person->idnumber));
-                //we actually want to allow first name to be changed from IMS data
+                // we actually want to allow first name to be changed from IMS data
                 //$person->firstname = isset($person->firstname) ? $person->firstname : null;
                 //if (!$orig_person->firstname && $person->firstname) {
                 //	$msg.="User $person->username  firstname updated to $person->firstname.\n";
@@ -815,7 +796,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 	}
                 }
 
-    			// this still needs testing - JKR        
+    			// This still needs testing - JKR.
                 if ($orig_person->username != $person->username) {
                 	$msg .= "Username changing from $orig_person->username to $person->username\n";
                 	if ($actual_person_id=$DB->get_field('user','id',array('username' => $person->username))) {
@@ -838,7 +819,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 	if (!$orig_person->url && $person->url) {
                 		$msg.="User url updated to $person->url.";
                 	} else {
-                		//don't want to update a url by accident
+                		// Don't want to update a url by accident.
                 		$person->url=$orig_person->url;
                 	}
                 } else {
@@ -858,65 +839,65 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             } else {
                 $this->log_line("No user record found for '$person->username' (ID number $person->idnumber).");
             }
-    
+
         }
-    
+
     }
-    
+
     /**
-    * Process the membership tag. This defines whether the specified Moodle users
-    * should be added/removed as teachers/students.
-    *
-    * @param string $tagcontents The raw contents of the XML element
-    */
+     * Process the membership tag. This defines whether the specified Moodle users
+     * should be added/removed as teachers/students.
+     *
+     * @param string $tagcontents The raw contents of the XML element
+     */
     protected function process_membership_tag($tagcontents) {
         global $DB;
 
 		$this->log_line('');  // for ease of reading - JKR
 
-		// Get plugin configs.
+        // Get plugin configs.
         $truncatecoursecodes = $this->get_config('truncatecoursecodes');
         $imscapitafix = $this->get_config('imscapitafix');
-    
+
         $memberstally = 0;
         $membersuntally = 0;
 
-		//here we store all enrolments as coming from the current IMS file - JKR
+		// Here we store all enrolments as coming from the current IMS file - JKR.
         $centralmembers = array();
 
         // In order to reduce the number of db queries required, group name/id associations are cached in this array.
         $groupids = array();
-    
+
         $ship = new stdClass();
-    
+
         if (preg_match('{<sourcedid>.*?<id>(.+?)</id>.*?</sourcedid>}is', $tagcontents, $matches)) {
             $ship->coursecode = ($truncatecoursecodes > 0)
-				? substr(trim($matches[1]), 0, intval($truncatecoursecodes))
-				: trim($matches[1]);
+                ? substr(trim($matches[1]), 0, intval($truncatecoursecodes))
+                : trim($matches[1]);
             $ship->courseid = $DB->get_field('course', 'id', array('idnumber' => $ship->coursecode));
         }
         if ($ship->courseid && preg_match_all('{<member>(.*?)</member>}is', $tagcontents, $membermatches, PREG_SET_ORDER)) {
             $courseobj = new stdClass();
             $courseobj->id = $ship->courseid;
 
-            // some more verbose logging - JKR
+            // Some more verbose logging - JKR.
             $this->log_line('');
             $this->log_line("Start enrolling users to course SOURCEDID $ship->coursecode, Moodle id = $courseobj->id");
 
-            foreach($membermatches as $mmatch) {
+            foreach ($membermatches as $mmatch) {
                 $member = new stdClass();
                 $memberstoreobj = new stdClass();
                 if (preg_match('{<sourcedid>.*?<id>(.+?)</id>.*?</sourcedid>}is', $mmatch[1], $matches)) {
                     $member->idnumber = trim($matches[1]);
                 }
                 if (preg_match('{<role\s+roletype=["\'](.+?)["\'].*?>}is', $mmatch[1], $matches)) {
-					// 01 means Student, 02 means Instructor, 3 means ContentDeveloper, and there are more besides.
+                    // 01 means Student, 02 means Instructor, 3 means ContentDeveloper, and there are more besides.
                     $member->roletype = trim($matches[1]);
                 } else if ($imscapitafix && preg_match('{<roletype>(.+?)</roletype>}is', $mmatch[1], $matches)) {
                     // The XML that comes out of Capita Student Records seems to contain a misinterpretation of
                     // the IMS specification! 01 means Student, 02 means Instructor, 3 means ContentDeveloper,
                     // and there are more besides.
-					$member->roletype = trim($matches[1]);
+                    $member->roletype = trim($matches[1]);
                 }
                 if (preg_match('{<role\b.*?<status>(.+?)</status>.*?</role>}is', $mmatch[1], $matches)) {
                     // 1 means active, 0 means inactive - treat this as enrol vs unenrol.
@@ -925,10 +906,10 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
 
                 $recstatus = ($this->get_recstatus($mmatch[1], 'role'));
                 if ($recstatus == 3) {
-					// See above - recstatus of 3 (==delete) is treated the same as status of 0.
-					$member->status = 0;
+                    // See above - recstatus of 3 (==delete) is treated the same as status of 0.
+                    $member->status = 0;
                 }
-    
+
                 $timeframe = new stdClass();
                 $timeframe->begin = 0;
                 $timeframe->end = 0;
@@ -940,7 +921,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                     $member->groupname = trim($matches[1]);
                     // The actual processing (ensuring a group record exists, etc) occurs below, in the enrol-a-student clause.
                 }
-    
+
                 // Add or remove this student or teacher to the course...
                 $memberstoreobj->userid = $DB->get_field('user', 'id', array('idnumber' => $member->idnumber));
                 $memberstoreobj->enrol = 'imsenterprise';
@@ -948,47 +929,47 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                 $memberstoreobj->time = time();
                 $memberstoreobj->timemodified = time();
                 if ($memberstoreobj->userid) {
-    
+
                     // Decide the "real" role (i.e. the Moodle role) that this user should be assigned to.
                     // Zero means this roletype is supposed to be skipped.
                     $moodleroleid = $this->rolemappings[$member->roletype];
                     if (!$moodleroleid) {
                         $this->log_line("SKIPPING role $member->roletype for $memberstoreobj->userid "
-                                ."($member->idnumber) in course $memberstoreobj->course");
+                            ."($member->idnumber) in course $memberstoreobj->course");
                         continue;
                     }
-    
+
                     if (intval($member->status) == 1) {
                         // Enrol the member.
 
                         $einstance = $DB->get_record('enrol',
-							array('courseid' => $courseobj->id, 'enrol' => $memberstoreobj->enrol));
+                            array('courseid' => $courseobj->id, 'enrol' => $memberstoreobj->enrol));
                         if (empty($einstance)) {
-                        	// more verbose log - JKR
+                        	// More verbose log - JKR.
                         	$this->log_line('Adding enrol instance to course');
 
                             // Only add an enrol instance to the course if non-existent.
-                        	$enrolid = $this->add_instance($courseobj);
+                            $enrolid = $this->add_instance($courseobj);
                             $einstance = $DB->get_record('enrol', array('id' => $enrolid));
                         }
-    
+
                         $this->enrol_user($einstance, $memberstoreobj->userid, $moodleroleid, $timeframe->begin, $timeframe->end);
 
-						$this->log_line("Enrolled user #$memberstoreobj->userid ($member->idnumber) "
-							."to role $member->roletype in course $memberstoreobj->course");
-						$memberstally++;
+                        $this->log_line("Enrolled user #$memberstoreobj->userid ($member->idnumber) "
+                            ."to role $member->roletype in course $memberstoreobj->course");
+                        $memberstally++;
 
-                        // track for snapshot unenroll - JKR
+                        // Track for snapshot unenroll - JKR.
                         $memberstoreobj->roleid=$moodleroleid;
-    					$centralmembers[]=$memberstoreobj;
+                        $centralmembers[]=$memberstoreobj;
 
-						// At this point we can also ensure the group membership is recorded if present.
+                        // At this point we can also ensure the group membership is recorded if present.
                         if (isset($member->groupname)) {
                             // Create the group if it doesn't exist - either way, make sure we know the group ID.
                             if (isset($groupids[$member->groupname])) {
                                 $member->groupid = $groupids[$member->groupname]; // Recall the group ID from cache if available.
                             } else {
-                                $params = array('courseid'=>$ship->courseid, 'name'=>$member->groupname);
+                                $params = array('courseid' => $ship->courseid, 'name' => $member->groupname);
                                 if ($groupid = $DB->get_field('groups', 'id', $params)) {
                                     $member->groupid = $groupid;
                                     $groupids[$member->groupname] = $groupid; // Store ID in cache.
@@ -1007,10 +988,10 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                                     cache_helper::invalidate_by_definition('core', 'groupdata', array(), array($ship->courseid));
                                 }
                             }
-                            // Add the user-to-group association if it doesn't already exist
+                            // Add the user-to-group association if it doesn't already exist.
                             if ($member->groupid) {
                                 groups_add_member($member->groupid, $memberstoreobj->userid,
-									'enrol_imsenterprise', $einstance->id);
+                                    'enrol_imsenterprise', $einstance->id);
                             }
                         }
 
@@ -1018,18 +999,18 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
                         // Unenrol member.
 
                         $einstances = $DB->get_records('enrol',
-							array('enrol' => $memberstoreobj->enrol, 'courseid' => $courseobj->id));
+                            array('enrol' => $memberstoreobj->enrol, 'courseid' => $courseobj->id));
                         foreach ($einstances as $einstance) {
                             // Unenrol the user from all imsenterprise enrolment instances.
                             $this->unenrol_user($einstance, $memberstoreobj->userid);
                         }
-    
+
                         $membersuntally++;
                         $this->log_line("Unenrolled $member->idnumber from role $moodleroleid in course");
                     }
 
                 } else {
-                    // user not found, error - JKR
+                    // user not found, error - JKR.
                 	$this->log_line("Error: user $member->idnumber NOT FOUND!");
                 	$this->errorCount++;
                 }
@@ -1040,17 +1021,17 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             }
         }
 
-		// return member list for snapshot unenrol - JKR
-		return $centralmembers;
+        // return member list for snapshot unenrol - JKR.
+        return $centralmembers;
 
 	} // End process_membership_tag().
     
     /**
-    * Process the properties tag. The only data from this element
-    * that is relevant is whether a <target> is specified.
-	*
-    * @param string $tagcontents The raw contents of the XML element
-    */
+     * Process the properties tag. The only data from this element
+     * that is relevant is whether a <target> is specified.
+     *
+     * @param string $tagcontents The raw contents of the XML element
+     */
     protected function process_properties_tag($tagcontents) {
         $imsrestricttarget = $this->get_config('imsrestricttarget');
 
@@ -1063,13 +1044,13 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
     }
 
     /**
-    * Store logging information. This does two things: uses the {@link mtrace()}
-    * function to print info to screen/STDOUT, and also writes log to a text file
-    * if a path has been specified.
-    * @param string $string Text to write (newline will be added automatically)
-    */
+     * Store logging information. This does two things: uses the {@link mtrace()}
+     * function to print info to screen/STDOUT, and also writes log to a text file
+     * if a path has been specified.
+     * @param string $string Text to write (newline will be added automatically)
+     */
     protected function log_line($string) {
-    
+
         if (!PHPUNIT_TEST) {
             mtrace($string);
         }
@@ -1077,19 +1058,19 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             fwrite($this->logfp, $string . "\n");
         }
     }
-    
+
     /**
      * Process the INNER contents of a <timeframe> tag, to return beginning/ending dates.
      *
      * @param string $string tag to decode.
      * @return stdClass beginning and/or ending is returned, in unix time, zero indicating not specified.
      */
-	protected static function decode_timeframe($string) {
+    protected static function decode_timeframe($string) {
         $ret = new stdClass();
         $ret->begin = $ret->end = 0;
         // Explanatory note: The matching will ONLY match if the attribute restrict="1"
         // because otherwise the time markers should be ignored (participation should be
-        // allowed outside the period),
+        // allowed outside the period).
         if (preg_match('{<begin\s+restrict="1">(\d\d\d\d)-(\d\d)-(\d\d)</begin>}is', $string, $matches)) {
             $ret->begin = mktime(0, 0, 0, $matches[2], $matches[3], $matches[1]);
         }
@@ -1098,14 +1079,13 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
         }
         return $ret;
     }
-    
+
     /**
-    * Load the role mappings (from the config), so we can easily refer to
-    * how an IMS-E role corresponds to a Moodle role
-    */
+     * Load the role mappings (from the config), so we can easily refer to
+     * how an IMS-E role corresponds to a Moodle role
+     */
     protected function load_role_mappings() {
         require_once('locallib.php');
-        global $DB;
 
         $imsroles = new imsenterprise_roles();
         $imsroles = $imsroles->get_imsroles();
@@ -1115,7 +1095,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
             $this->rolemappings[$imsrolenum] = $this->rolemappings[$imsrolename] = $this->get_config('imsrolemap' . $imsrolenum);
         }
     }
-    
+
     /**
      * Load the name mappings (from the config), so we can easily refer to
      * how an IMS-E course properties corresponds to a Moodle course properties
@@ -1166,7 +1146,7 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
         return $defaultcategoryid;
     }
 
-	// custom additions - JKR
+	// Custom additions - JKR.
 
     /**
      * Snapshot unenrol. Compares Moodle users with IMS Enterprise users
@@ -1182,16 +1162,16 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
     	// $this->log_line( "coursecode parameter:\n" . print_r($coursecodes,true) );
     	// $this->log_line( "central_member_list parameter:\n" . print_r($central_member_list,true) );
     
-    	//get all students in the moodle database
-    	//not needed, already set as array() - JKR
-    	//$coursecodes = isset($coursecodes) ? $coursecodes : array();
+    	// Get all students in the moodle database
+    	// not needed, already set as array() - JKR.
+    	// $coursecodes = isset($coursecodes) ? $coursecodes : array();
     	$central_userids=array();
 
-    	// Build the central_userids array before the course loop - APG
+    	// Build the central_userids array before the course loop - APG.
     	if (isset($central_member_list)) {
-    		//build list of IMS users in this role in all current IMS course data
+    		// Build list of IMS users in this role in all current IMS course data.
     		foreach ($central_member_list as $central_member_array) {
-    			//make array of the members in central records by course
+    			// Make array of the members in central records by course.
     			foreach ($central_member_array as $central_member_object) {
     				if (is_object($central_member_object)) {
     					$central_userids[$central_member_object->course][]=$central_member_object->userid;
@@ -1203,12 +1183,12 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
     	}
 
     	// $coursecodes is an array of arrays, not an array of values as in v1.9
-    	// this it to handle Course Aliasing, see process_group_tag() above - JKR
+    	// This it to handle Course Aliasing, see process_group_tag() above - JKR.
     	foreach ($coursecodes as $courseidlist) {
     		$keep_informal=true;
 
-    		// NOTE: this only looks at the first course in this record (ie. $courseidlist[0] )
-    		// if Course Aliasing, see process_group_tag() above, is ever implemented, we need to redo this - JKR
+    		// NOTE: this only looks at the first course in this record (ie. $courseidlist[0] ).
+    		// If Course Aliasing, see process_group_tag() above, is ever implemented, we need to redo this - JKR.
     		$courseidnumber = $courseidlist[0];
 
     		$course = $DB->get_record('course',array('idnumber'=>$courseidnumber));
@@ -1218,27 +1198,27 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
     		//$this->log_line("Getting role records\n");
     		$roles=$DB->get_records('role');
     
-    		// Grab the enrolment group for imsenterprise so that we can ensure only IMS users are removed - APG
-    		//$this->log_line("Getting enrolment_group records\n");
+    		// Grab the enrolment group for imsenterprise so that we can ensure only IMS users are removed - APG.
+    		// $this->log_line("Getting enrolment_group records\n");
     		$enrolment_group = $DB->get_record('enrol', array('courseid'=>$course->id, 'enrol'=>'imsenterprise'));
     		if ($enrolment_group) {
     
     			foreach ($roles as $role) {
-    				//$role->name is invalid in >= 2.4, use role_get_name($role) - JKR
-    				//$this->log_line("  ROLE: $role->id (" . role_get_name($role) . ")" );
+    				// $role->name is invalid in >= 2.4, use role_get_name($role) - JKR
+    				// $this->log_line("  ROLE: $role->id (" . role_get_name($role) . ")" );
     
-    				//get list of Moodle users in this role in  course
+    				// Get list of Moodle users in this role in  course.
     
-    				// This now has a pre-check for the enrolment group that is imsenterprise so we no longer have to check for it later - APG
-    				// In 2.4, cannot used mixed parameters, so last where clause is collapsed into single statement, with empty parameters - JKR 20130514
+    				// This now has a pre-check for the enrolment group that is imsenterprise so we no longer have to check for it later - APG.
+    				// In 2.4, cannot used mixed parameters, so last where clause is collapsed into single statement, with empty parameters - JKR 20130514.
     				if ($contextusers = get_role_users($role->id, $context, false, 'u.id,u.username,ra.roleid, ra.itemid',
     						'u.id', null,'', '', '', 'ra.itemid = ' . $enrolment_group->id, null)) {
     						 
     						//$this->log_line( "    MOODLE contextusers:\n" . print_r($contextusers,true));
 
-    				//show all IMS users in this role for the current class.
-    				//$this->log_line( "    IMS central_userids:\n" . print_r($central_userids,true));
-    				//loop through moodle users in this role and compare with IMS users
+    				// Show all IMS users in this role for the current class.
+    				// $this->log_line( "    IMS central_userids:\n" . print_r($central_userids,true));
+    				// Loop through moodle users in this role and compare with IMS users
     				foreach ($contextusers as $moodle_user) {
     					//$this->log_line("    MOODLE CONTEXT SINGLE USER: $moodle_user->id ($moodle_user->username, Enrol=$moodle_user->itemid, Keep=$keep_informal)");
     					if (!isset($central_userids[$course->id]) or !in_array($moodle_user->id,$central_userids[$course->id])) {
@@ -1258,8 +1238,6 @@ class enrol_imsenterprise_plugin extends enrol_plugin {
     	$this->log_line("--- snapshot_unenrol() finished ---");
     }
 
-    // end of custom additions - JKR
+    // end of custom additions - JKR.
 
 }
-
-
